@@ -1,0 +1,75 @@
+
+
+.note_one{
+  position: fixed;
+  right: 100rpx;
+  bottom: 100rpx;
+  color: #3096ff;
+  font-size: 80rpx;
+}
+
+
+.pick_time{
+  background: #3096ff;
+  height: 80rpx;
+  display: flex;justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.count{
+  padding: 20rpx;
+  padding-top: 0;
+  background: #3096ff;
+  color: #ffffff;
+  display: flex;
+  view{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    view:nth-child(1){
+      font-size: 25rpx;
+      margin-bottom: 10rpx;
+      text-align: center;
+    }
+    view:nth-child(2){
+      font-size: 40rpx;
+      text-align: center;
+    }
+  }
+}
+.item{
+  padding:20rpx;
+  margin-bottom: 5rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .icon{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    background: #f6f6f6;
+    color: #3096ff;
+    margin-right: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50rpx;
+  }
+  .info{
+    flex: 1;
+    &>view:nth-child(1){
+      display: flex;
+      justify-content: space-between;
+      font-size: 35rpx;
+    }
+    &>view:nth-child(2){
+      font-size: 30rpx;
+      color: #999999;
+    }
+    &>view:nth-child(3){
+      font-size: 25rpx;
+      color: #999999;
+    }
+  }
+}

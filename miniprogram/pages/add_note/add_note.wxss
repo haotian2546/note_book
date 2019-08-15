@@ -1,0 +1,92 @@
+.tab {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.tab view {
+  box-sizing: border-box;
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab .activity_type {
+  color: #3096ff;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  background: #ffffff;
+  margin-bottom: 10rpx;
+}
+.tags > view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+  margin-right: 77.5rpx;
+  color: #999999;
+}
+.tags > view > view:nth-child(1) {
+  width: 80rpx;
+  height: 80rpx;
+  background: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+  border-radius: 100%;
+  margin-bottom: 10rpx;
+}
+.tags > view .activity_tag {
+  background: #3096ff!important;
+  color: #ffffff!important;
+}
+.tags > view:nth-child(5n) {
+  margin-right: 0;
+}
+.money {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-bottom: 10rpx;
+}
+.money input {
+  flex: 1;
+  height: 100rpx;
+}
+.money view {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50rpx;
+  border-radius: 100%;
+  background: #3096ff!important;
+  color: #ffffff!important;
+}
+.market {
+  background: #ffffff;
+  margin-bottom: 30rpx;
+}
+.market input {
+  width: 710rpx;
+  margin: 0 auto;
+  height: 100rpx;
+}
+.submit {
+  width: 710rpx;
+  background: #3096ff;
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  text-align: center;
+}

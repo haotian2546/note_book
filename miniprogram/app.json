@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/add_note/add_note",
+    "pages/author/author",
+    "pages/note/note"
+  ],
+  "window": {
+    "navigationBarTitleText": "流水掌-收支尽在掌握",
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3096ff",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,17 @@
+<wxs module="filter" src="../../utils/utils.wxs"></wxs>
+<view class="box">
+  <view class="item">
+    <view>金额</view>
+    <view wx:if="{{note.type==='expend'}}">- {{note.expend}}</view>
+    <view wx:if="{{note.type==='income'}}">+ {{note.income}}</view>
+  </view>
+  <view  class="item">
+    <view>类型</view>
+    <view>{{note.tag.name}} {{note.type==='expend'?'支出':'收入'}}</view>
+  </view>
+  <view  class="item">
+    <view>时间</view>
+    <view>{{filter.allTime(note.create_time)}}</view>
+  </view>
+  <view class="remark" wx:if="{{note.remark}}">备注：{{note.remark}}</view>
+</view>

@@ -1,0 +1,35 @@
+<wxs module="filter" src="../../utils/utils.wxs"></wxs>
+<view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view>
+<view class="pick_time">
+  <picker mode="date" value="{{year}}-{{month}}-01" bindchange="switch_handel">
+    <view class="picker">{{year}}年{{month}}月流水信息</view>
+  </picker>
+</view>
+<view class="count">
+  <view>
+    <view>收入</view>
+    <view>¥ {{num_in}}</view>
+  </view>
+  <view>
+    <view>支出</view>
+    <view>¥ {{num_out}}</view>
+  </view>
+  <view>
+    <view>月结余</view>
+    <view>¥ {{num_in-num_out}}</view>
+  </view>
+</view>
+<view>
+  <view wx:for="{{list}}" wx:key="{{item._id}}" class="item" bindtap="nav_note_handel" data-id="{{item._id}}">
+    <view class="icon iconfont {{item.tag.icon}}"></view>
+    <view class="info">
+      <view>
+        <view>{{item.tag.name}}</view>
+        <view wx:if="{{item.type==='income'}}">+{{item.income}}</view>
+        <view wx:if="{{item.type==='expend'}}">-{{item.expend}}</view>
+      </view>
+      <view>{{item.remark}}</view>
+      <view style="font-size:25rpx;">{{filter.allTime(item.create_time)}}</view>
+    </view>
+  </view>
+</view>
