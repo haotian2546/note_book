@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.hideLoading();
   },
   onGotUserInfo: function (res) {
     if (res.detail.errMsg === 'getUserInfo:ok') {
@@ -37,7 +37,7 @@ Page({
                 icon: 'none',
               });
               app.globalData.userInfo = res.data[0];
-              wx.redirectTo({
+              wx.switchTab({
                 url: '/pages/index/index',
               });
             } else {
@@ -64,7 +64,7 @@ Page({
                           icon: 'none',
                         })
                         wx.hideLoading();
-                        wx.redirectTo({
+                        wx.switchTab({
                           url: '/pages/index/index',
                         });
                           
