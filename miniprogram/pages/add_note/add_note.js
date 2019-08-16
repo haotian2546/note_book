@@ -70,11 +70,12 @@ Page({
           change_time: (new Date()).getTime(),
         }
       }
-      console.log(data);
       db.collection('note').add({ data }).then(res => {
-        console.log(res);
+        // wx.redirectTo({
+        //   url: '/pages/note/note?id=' + res._id,
+        // });
         wx.redirectTo({
-          url: '/pages/note/note?id=' + res._id,
+          url: '/pages/index/index',
         });
 
       })

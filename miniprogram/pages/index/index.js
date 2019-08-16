@@ -120,9 +120,12 @@ Page({
     })
   },
   nav_note_handel: function (e) {
-    wx.navigateTo({
-      url: '/pages/note/note?id=' + e.currentTarget.dataset.id,
-    });
+    if (this.endTime - this.startTime < 350) {
+      wx.navigateTo({
+        url: '/pages/note/note?id=' + e.currentTarget.dataset.id,
+      });
+    }
+
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -138,5 +141,51 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  del_note_handel: function (e) {
+    wx.showModal({
+      title: '警告',
+      content: '你确定要删除它吗？',
+      showCancel: true,
+      cancelText: '取消',
+      cancelColor: '#999999',
+      confirmText: '删除',
+      confirmColor: '#3096ff',
+      success: (result) => {
+        if (result.confirm) {
+          wx.showLoading({
+            title: '正在删除',
+            mask: true,
+          });
+          db.collection('note').doc(e.currentTarget.dataset.id).remove({
+            success: res => {
+              if (res.stats.removed) {
+                this.getList(this.data.startDate, this.data.endDate);
+              }
+              wx.hideLoading();
+            },
+            fail: err => {
+              wx.hideLoading();
+              wx.showToast({
+                icon: 'none',
+                title: '删除失败',
+              })
+            }
+          })
+        }
+      }
+    });
+
+  },
+  //touch start
+  handleTouchStart: function (e) {
+    this.startTime = e.timeStamp;
+    //console.log(" startTime = " + e.timeStamp);  
+  },
+
+  //touch end
+  handleTouchEnd: function (e) {
+    this.endTime = e.timeStamp;
+    //console.log(" endTime = " + e.timeStamp);  
+  },
 })

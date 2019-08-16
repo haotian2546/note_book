@@ -1,6 +1,4 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-
-
 <view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view>
 <view class="pick_time">
   <picker mode="date" value="{{year}}-{{month}}-01" bindchange="switch_handel">
@@ -22,7 +20,16 @@
   </view>
 </view>
 <view>
-  <view wx:for="{{list}}" wx:key="{{item._id}}" class="item" bindtap="nav_note_handel" data-id="{{item._id}}">
+  <view 
+  wx:for="{{list}}" 
+  wx:key="{{item._id}}" 
+  class="item" 
+  hover-class="hover-class"
+  data-id="{{item._id}}" 
+  bindtap="nav_note_handel" 
+  bindlongtap="del_note_handel" 
+  bindtouchstart="handleTouchStart" 
+  bindtouchend="handleTouchEnd">
     <view class="icon iconfont {{item.tag.icon}}"></view>
     <view class="info">
       <view>
