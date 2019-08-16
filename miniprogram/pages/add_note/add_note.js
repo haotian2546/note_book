@@ -71,10 +71,7 @@ Page({
         }
       }
       db.collection('note').add({ data }).then(res => {
-        // wx.redirectTo({
-        //   url: '/pages/note/note?id=' + res._id,
-        // });
-        wx.redirectTo({
+        wx.reLaunch({
           url: '/pages/index/index',
         });
 

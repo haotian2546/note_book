@@ -13,5 +13,23 @@
     "navigationBarBackgroundColor": "#3096ff",
     "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#3096ff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "账单",
+        "iconPath": "images/list1.png",
+        "selectedIconPath": "images/list.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user1.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

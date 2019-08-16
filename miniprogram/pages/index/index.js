@@ -22,7 +22,7 @@ Page({
    */
   onLoad: function (options) {
     wx.showLoading({
-      title: '正在计算...',
+      title: '财源广进',
       mask: true,
     });
     if (app.globalData.userInfo) {
@@ -187,5 +187,9 @@ Page({
   handleTouchEnd: function (e) {
     this.endTime = e.timeStamp;
     //console.log(" endTime = " + e.timeStamp);  
+  },
+
+  onUnload: function () {
+    console.log(122)
   },
 })
