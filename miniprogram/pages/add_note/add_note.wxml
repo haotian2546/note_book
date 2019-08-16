@@ -9,7 +9,7 @@
   </view>
 </view>
 <view class="money">
-  <input  bindinput="money" placeholder="金额" type="number" focus="{{true}}"></input>
+  <input  bindinput="money" placeholder="金额" type="digit" focus="{{true}}"></input>
   <view class="iconfont {{tags[current_tag].icon}} activity_tag"></view>
 </view>
 <view class="market">

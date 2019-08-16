@@ -1,4 +1,6 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
+
+
 <view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view>
 <view class="pick_time">
   <picker mode="date" value="{{year}}-{{month}}-01" bindchange="switch_handel">

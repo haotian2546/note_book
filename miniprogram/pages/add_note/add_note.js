@@ -31,7 +31,7 @@ Page({
       this.setData({
         tags: res.data
       });
-      wx.hideLoading();      
+      wx.hideLoading();
     })
   },
   switch_tag_handel: function (e) {
@@ -47,36 +47,47 @@ Page({
     })
   },
   submit_handel: function () {
-    let data;
-    if (this.data.type === 'tag_out') {
-      data = {
-        expend: this.data.money,
-        remark: this.data.remark,
-        type:'expend',
-        tag: this.data.tags[this.data.current_tag]._id,
-        author: app.globalData.userInfo._id,
-        create_time: (new Date()).getTime(),
-        change_time: (new Date()).getTime(),
+    if (!isNaN(this.data.money) && this.data.money > 0) {
+      let data;
+      if (this.data.type === 'tag_out') {
+        data = {
+          expend: this.data.money,
+          remark: this.data.remark,
+          type: 'expend',
+          tag: this.data.tags[this.data.current_tag]._id,
+          author: app.globalData.userInfo._id,
+          create_time: (new Date()).getTime(),
+          change_time: (new Date()).getTime(),
+        }
+      } else if (this.data.type === 'tag_in') {
+        data = {
+          income: this.data.money,
+          remark: this.data.remark,
+          type: 'income',
+          tag: this.data.tags[this.data.current_tag]._id,
+          author: app.globalData.userInfo._id,
+          create_time: (new Date()).getTime(),
+          change_time: (new Date()).getTime(),
+        }
       }
-    } else if (this.data.type === 'tag_in') {
-      data = {
-        income: this.data.money,
-        remark: this.data.remark,
-        type: 'income',
-        tag: this.data.tags[this.data.current_tag]._id,
-        author: app.globalData.userInfo._id,
-        create_time: (new Date()).getTime(),
-        change_time: (new Date()).getTime(),
-      }
-    }
-    console.log(data);
-    db.collection('note').add({ data }).then(res => {
-      console.log(res);
-      wx.redirectTo({
-        url: '/pages/note/note?id='+res._id,
+      console.log(data);
+      db.collection('note').add({ data }).then(res => {
+        console.log(res);
+        wx.redirectTo({
+          url: '/pages/note/note?id=' + res._id,
+        });
+
+      })
+    } else {
+      wx.showToast({
+        title: '有错误',
+        icon: 'none',
+        image: '',
+        duration: 1500,
+        mask: false,
       });
-        
-    })
+    }
+
 
   },
   remark: function (e) {

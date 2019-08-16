@@ -7,8 +7,8 @@ App({
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        // env: 'dev-money',
-        env: 'pro-money',
+        env: 'dev-money',
+        // env: 'pro-money',
         traceUser: true,
       })
     }
@@ -21,7 +21,6 @@ App({
       success: (res) => {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          console.log(1)
           wx.showLoading({
             title: '正在加载数据',
             mask: true,
@@ -33,7 +32,6 @@ App({
               db.collection('user').where({
                 _openid: res.result.openid
               }).get().then(res => {
-                console.log(111, res);
                 if (res.data.length > 0) {
                   that.globalData.userInfo = res.data[0];
                   if (this.checkLoginReadyCallback) {
