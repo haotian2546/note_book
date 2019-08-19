@@ -3,25 +3,33 @@
     "pages/index/index",
     "pages/user/user",
     "pages/add_note/add_note",
+    "pages/add_note_book/add_note_book",
     "pages/author/author",
-    "pages/note/note"
+    "pages/note/note",
+    "pages/note_books/note_books"
   ],
   "window": {
     "navigationBarTitleText": "流水掌-收支尽在掌握",
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3096ff",
+    "navigationBarBackgroundColor": "#52495b",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#8a8a8a",
-    "selectedColor": "#3096ff",
+    "selectedColor": "#52495b",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "账单",
-        "iconPath": "images/list1.png",
-        "selectedIconPath": "images/list.png"
+        "text": "首页",
+        "iconPath": "images/dog1.png",
+        "selectedIconPath": "images/dog.png"
+      },
+      {
+        "pagePath": "pages/note_books/note_books",
+        "text": "发现",
+        "iconPath": "images/faxian1.png",
+        "selectedIconPath": "images/faxian.png"
       },
       {
         "pagePath": "pages/user/user",

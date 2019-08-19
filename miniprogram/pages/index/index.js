@@ -150,7 +150,7 @@ Page({
       cancelText: '取消',
       cancelColor: '#999999',
       confirmText: '删除',
-      confirmColor: '#3096ff',
+      confirmColor: '#52495b',
       success: (result) => {
         if (result.confirm) {
           wx.showLoading({

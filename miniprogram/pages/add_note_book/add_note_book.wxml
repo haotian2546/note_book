@@ -1,0 +1,16 @@
+<view class="item">
+  <input bindinput="title_text" placeholder="主题" type="text"></input>
+</view>
+<view class="item">
+  <input bindinput="desc_text" value="一个有趣的账本～" placeholder="描述" type="text"></input>
+</view>
+<view class="banner_box">
+  <view class="title">选择背景图</view>
+  <view class="banners">
+    <view wx:for="{{covers}}" wx:key="{{item}}">
+      <image bindtap="previewHandel" data-url="{{item}}" lazy-load="{{true}}" src="{{item}}" mode="aspectFill"></image>
+      <view bindtap="check_cover_handel" data-index="{{index}}" class="iconfont {{current_cover===index?'icon-xuanzhong':'icon-xuanzhongyuandian'}}"></view>
+    </view>
+  </view>
+</view>
+<view hover-class="hover-class" bindtap="submit_handel" class="submit">创建我的专题账本</view>

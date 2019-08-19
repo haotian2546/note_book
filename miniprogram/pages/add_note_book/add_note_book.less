@@ -1,0 +1,60 @@
+.item{
+  background: #ffffff;
+  padding: 0 20rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+  &>input{
+    flex: 1;
+  }
+}
+
+
+.banner_box{
+  background: #ffffff;
+  padding: 20rpx;
+  .title{
+    color: #52495b;
+    padding-bottom: 20rpx;
+  }
+  .banners{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &>view{
+      width: 170rpx;
+      height: 170rpx;
+      margin-bottom: 10rpx;
+      overflow: hidden;
+      position: relative;
+      image{
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      &>view{
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #12d58b;
+        width: 60rpx;
+        height: 60rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+
+.submit{
+  width: 710rpx;
+  background: #52495b;
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 20rpx 0;
+  text-align: center;
+}

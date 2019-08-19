@@ -1,0 +1,5 @@
+<!-- pages/note_books/note_books.wxml -->
+<view class="nav_node_book_add iconfont icon-aadd" bindtap="nav_add_node_book"></view>
+<view>
+
+</view>

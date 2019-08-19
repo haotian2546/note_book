@@ -14,7 +14,7 @@
   align-items: center;
 }
 .tab .activity_type {
-  color: #3096ff;
+  color: #52495b;
 }
 .tags {
   display: flex;
@@ -44,7 +44,7 @@
   margin-bottom: 10rpx;
 }
 .tags > view .activity_tag {
-  background: #3096ff!important;
+  background: #52495b!important;
   color: #ffffff!important;
 }
 .tags > view:nth-child(5n) {
@@ -70,7 +70,7 @@
   align-items: center;
   font-size: 50rpx;
   border-radius: 100%;
-  background: #3096ff!important;
+  background: #52495b!important;
   color: #ffffff!important;
 }
 .market {
@@ -84,7 +84,7 @@
 }
 .submit {
   width: 710rpx;
-  background: #3096ff;
+  background: #52495b;
   color: #ffffff;
   margin: 0 auto;
   padding: 20rpx 0;
