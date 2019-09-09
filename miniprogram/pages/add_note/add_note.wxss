@@ -1,9 +1,10 @@
 .tab {
-  background: #ffffff;
+  background: #52495b;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10rpx;
+  color: #f6f6f6;
 }
 .tab view {
   box-sizing: border-box;
@@ -14,7 +15,7 @@
   align-items: center;
 }
 .tab .activity_type {
-  color: #52495b;
+  color: #12d58b;
 }
 .tags {
   display: flex;

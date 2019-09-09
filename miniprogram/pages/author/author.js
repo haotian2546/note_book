@@ -37,7 +37,8 @@ Page({
                 icon: 'none',
               });
               app.globalData.userInfo = res.data[0];
-              wx.switchTab({
+              app.globalData.auth = true;
+              wx.reLaunch({
                 url: '/pages/index/index',
               });
             } else {
@@ -59,15 +60,16 @@ Page({
                         _id: res._id
                       }).get().then(res => {
                         app.globalData.userInfo = res.data[0];
+                        app.globalData.auth = true;
                         wx.showToast({
                           title: '注册成功',
                           icon: 'none',
                         })
                         wx.hideLoading();
-                        wx.switchTab({
+                        wx.reLaunch({
                           url: '/pages/index/index',
                         });
-                          
+
                       })
 
                     } else {

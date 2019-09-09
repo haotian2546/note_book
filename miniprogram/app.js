@@ -7,8 +7,8 @@ App({
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        env: 'dev-money',
-        // env: 'pro-money',
+        // env: 'dev-money',
+        env: 'pro-money',
         traceUser: true,
       })
     }
@@ -21,6 +21,7 @@ App({
       success: (res) => {
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          that.globalData.auth = true;
           wx.showLoading({
             title: '正在加载数据',
             mask: true,
@@ -47,16 +48,16 @@ App({
             }
           })
         } else {
-          wx.showToast({
-            title: '您的账号未授权',
-            icon: 'none',
-            duration: 2000,
-            success: () => {
-              wx.redirectTo({
-                url: '/pages/author/author',
-              });
-            }
-          });
+          // wx.showToast({
+          //   title: '您的账号未授权',
+          //   icon: 'none',
+          //   duration: 2000,
+          //   success: () => {
+          //     wx.redirectTo({
+          //       url: '/pages/author/author',
+          //     });
+          //   }
+          // });
         }
       }
     });
@@ -94,5 +95,29 @@ App({
   },
   globalData: {
     userInfo: null,
+    auth: false,
   }
 })
+
+
+
+
+
+
+
+
+// wx.showModal({
+//   title: `授权`,
+//   confirmText: '去授权',
+//   cancelText: '回主页',
+//   content: '授权解锁更多功能',
+//   success: function (res) {
+//     if (res.confirm) {
+//       wx.navigateTo({
+//         url: '/pages/author/author',
+//       });
+//     } else if (res.cancel) {
+//       return;
+//     }
+//   }
+// })

@@ -8,26 +8,40 @@ Page({
    */
   data: {
     userInfo: {},
-    count: {}
+    count: {},
+    auth: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          this.setData({
+            auth: true,
+          })
+          if (app.globalData.userInfo) {
+            this.getCount()
+          } else {
+            app.checkLoginReadyCallback = res => {
+              this.getCount()
+            };
+          }
+        } else {
+          this.setData({
+            auth: false,
+          })
+        }
+      }
+    });
+  },
+  getCount: function () {
     wx.showLoading({
       title: '恭喜发财',
       mask: true,
     });
-    if (app.globalData.userInfo) {
-      this.getCount()
-    } else {
-      app.checkLoginReadyCallback = res => {
-        this.getCount()
-      };
-    }
-  },
-  getCount: function () {
     let that = this;
     this.setData({
       userInfo: app.globalData.userInfo
@@ -53,13 +67,17 @@ Page({
   onReady: function () {
     // wx.hideLoading();
   },
-
+  nav_to_auth: function () {
+    wx.navigateTo({
+      url: '/pages/author/author',
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
-      
+
+
   },
 
   /**

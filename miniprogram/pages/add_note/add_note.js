@@ -19,7 +19,6 @@ Page({
    */
   onLoad: function (options) {
     this.getTags();
-    console.log(app.globalData)
   },
   getTags: function () {
     wx.showLoading({

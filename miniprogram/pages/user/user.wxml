@@ -1,5 +1,8 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<view class="user" wx:if="{{userInfo}}">
+<view class="button" hover-class="hover-class" wx:if="{{!auth}}" style="margin:100rpx auto;" bindtap="nav_to_auth">
+  去授权
+</view>
+<view class="user" wx:if="{{auth}}">
   <view class="user-avatar" style="background-image:url({{userInfo.avatarUrl}});"></view>
   <view class="user-info">
     <text>{{userInfo.nickName}}</text>
@@ -24,7 +27,8 @@
   {{(count.income-count.expend)>0?'结余':'负债'}}
   <view style="color:{{(count.income-count.expend)>0?'#12d58b':'red'}}">
     {{(count.income-count.expend)>0?(count.income-count.expend):(count.income-count.expend)*-1}}
-  </view>块
+  </view>
+  块
 </view>
 <view class="list">
   <!-- <view class="list-item" bindtap="nav_to_diss" hover-class="hover-class">
