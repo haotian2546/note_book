@@ -1,0 +1,9 @@
+<!-- pages/note_books/note_books.wxml -->
+<view class="nav_node_book_add iconfont icon-aadd" bindtap="nav_add_node_book"></view>
+<view>
+  <navigator url="{{'/pages/list/list?id='+item._id}}" wx:for="{{list}}" wx:key="{{item._id}}" class="item">
+    <view>{{item.title}}</view>
+    <view class="lue">{{item.des}}</view>
+  </navigator>
+  <view class="nothing" wx:if="{{nothing}}">没有东西了...</view>
+</view>

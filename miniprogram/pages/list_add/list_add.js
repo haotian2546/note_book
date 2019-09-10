@@ -1,4 +1,4 @@
-// pages/note_books/note_books.js
+// pages/list_add/list_add.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
   },
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  nav_add_node_book: function () {
-    wx.navigateTo({
-      url: '/pages/add_note_book/add_note_book',
-    });
-  },
+  }
 })

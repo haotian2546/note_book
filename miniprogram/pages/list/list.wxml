@@ -1,0 +1,5 @@
+<view class="note_one iconfont icon-jizhang" bindtap="nav_list_add"></view>
+<view class="head">
+  <view>{{info.title}}</view>
+  <view>{{info.des}}</view>
+</view>

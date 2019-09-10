@@ -54,3 +54,10 @@
   padding: 20rpx 0;
   text-align: center;
 }
+.tips {
+  margin: 0 auto;
+  padding: 20rpx 0;
+  font-size: 20rpx;
+  color: #bfc2c7;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+.nav_node_book_add {
+  position: fixed;
+  right: 60rpx;
+  bottom: 60rpx;
+  color: #52495b;
+  font-size: 80rpx;
+}
+.item {
+  padding: 20rpx;
+  margin-bottom: 5rpx;
+  background: #ffffff;
+}
+.item > view:nth-child(1) {
+  font-size: 30rpx;
+  margin-bottom: 5rpx;
+}
+.item > view:nth-child(2) {
+  font-size: 25rpx;
+  color: #bfc2c7;
+}

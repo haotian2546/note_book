@@ -2,21 +2,23 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/add_note/add_note",
-    "pages/add_note_book/add_note_book",
+    "pages/note_add/note_add",
     "pages/author/author",
     "pages/note/note",
-    "pages/note_books/note_books"
+    "pages/lists/lists",
+    "pages/lists_add/lists_add",
+    "pages/list/list",
+    "pages/list_add/list_add"
   ],
   "window": {
-    "navigationBarTitleText": "流水掌-收支尽在掌握",
+    "navigationBarTitleText": "金毛",
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#52495b",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#8a8a8a",
+    "color": "#bfc2c7",
     "selectedColor": "#52495b",
     "list": [
       {
@@ -26,7 +28,7 @@
         "selectedIconPath": "images/dog.png"
       },
       {
-        "pagePath": "pages/note_books/note_books",
+        "pagePath": "pages/lists/lists",
         "text": "发现",
         "iconPath": "images/faxian1.png",
         "selectedIconPath": "images/faxian.png"

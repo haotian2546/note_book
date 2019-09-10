@@ -37,10 +37,6 @@ Page({
 
 
   getList: function (type = false) {
-    wx.showLoading({
-      title: '财源广进',
-      mask: true,
-    });
     let that = this;
     wx.cloud.callFunction({
       name: 'getNotes',
@@ -85,12 +81,12 @@ Page({
         if (res.authSetting['scope.userInfo']) {
           if (app.globalData.userInfo) {
             wx.navigateTo({
-              url: '/pages/add_note/add_note',
+              url: '/pages/note_add/note_add',
             });
           } else {
             app.checkLoginReadyCallback = res => {
               wx.navigateTo({
-                url: '/pages/add_note/add_note',
+                url: '/pages/note_add/note_add',
               });
             };
           }
@@ -127,6 +123,7 @@ Page({
   onPullDownRefresh: function () {
     this.setData({
       page: 0,
+      nothing: false
     });
     this.getList(true);
   },
