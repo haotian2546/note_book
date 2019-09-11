@@ -10,7 +10,9 @@ Page({
   data: {
     list: [],
     page: 0,
-    nothing: false
+    nothing: false,
+    startDate: 0,
+    endDate: 0,
   },
 
   /**
@@ -45,31 +47,27 @@ Page({
         page: that.data.page
       },
       success: function (res) {
-        if (res.result.length > 0) {
-          if (type) {
-            that.setData({
-              list: res.result,
-              page: that.data.page + 1
-            }, () => {
-              wx.hideLoading();
-              wx.stopPullDownRefresh();
-            })
-          } else {
-            that.setData({
-              list: that.data.list.concat(res.result),
-              page: that.data.page + 1
-            }, () => {
-              wx.hideLoading();
-              wx.stopPullDownRefresh();
-            })
-          }
-
+        if (type) {
+          that.setData({
+            list: res.result,
+            page: that.data.page + 1
+          }, () => {
+            wx.hideLoading();
+            wx.stopPullDownRefresh();
+          })
         } else {
+          that.setData({
+            list: that.data.list.concat(res.result),
+            page: that.data.page + 1
+          }, () => {
+            wx.hideLoading();
+            wx.stopPullDownRefresh();
+          })
+        };
+        if (res.result.length === 0) {
           that.setData({
             nothing: true,
           })
-          wx.hideLoading();
-          wx.stopPullDownRefresh();
         }
       }
     })
@@ -145,10 +143,18 @@ Page({
           });
           db.collection('note').doc(e.currentTarget.dataset.id).remove({
             success: res => {
-              if (res.stats.removed) {
-                this.getList(this.data.startDate, this.data.endDate);
-              }
               wx.hideLoading();
+              if (res.stats.removed) {
+                wx.showToast({
+                  icon: 'none',
+                  title: '删除成功',
+                })
+                this.setData({
+                  page: 0
+                }, () => {
+                  this.getList(true);
+                })
+              }
             },
             fail: err => {
               wx.hideLoading();

@@ -29,9 +29,9 @@
       },
       {
         "pagePath": "pages/lists/lists",
-        "text": "发现",
-        "iconPath": "images/faxian1.png",
-        "selectedIconPath": "images/faxian.png"
+        "text": "清单",
+        "iconPath": "images/list1.png",
+        "selectedIconPath": "images/list.png"
       },
       {
         "pagePath": "pages/user/user",

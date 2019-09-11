@@ -17,4 +17,14 @@
 .item > view:nth-child(2) {
   font-size: 25rpx;
   color: #bfc2c7;
+  margin-bottom: 5rpx;
+}
+.item > view:nth-child(3) {
+  font-size: 25rpx;
+  color: #bfc2c7;
+  display: flex;
+  justify-content: space-between;
+}
+.item > view:nth-child(3) > view:nth-child(2) {
+  color: #25c587;
 }

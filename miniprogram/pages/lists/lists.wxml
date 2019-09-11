@@ -1,9 +1,15 @@
 <!-- pages/note_books/note_books.wxml -->
+<wxs module="filter" src="../../utils/utils.wxs"></wxs>
 <view class="nav_node_book_add iconfont icon-aadd" bindtap="nav_add_node_book"></view>
+<view></view>
 <view>
   <navigator url="{{'/pages/list/list?id='+item._id}}" wx:for="{{list}}" wx:key="{{item._id}}" class="item">
     <view>{{item.title}}</view>
     <view class="lue">{{item.des}}</view>
+    <view>
+      <view>{{filter.allTime(item.create_time)}}</view>
+      <view>{{item.count}}条记录</view>
+    </view>
   </navigator>
   <view class="nothing" wx:if="{{nothing}}">没有东西了...</view>
 </view>

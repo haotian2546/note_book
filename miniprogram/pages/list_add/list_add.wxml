@@ -2,6 +2,9 @@
   <input focus="true" placeholder="金额" type="number" bindinput="handel_num"></input>
 </view>
 <view class="item">
-  <textarea placeholder="金额描述～" bindinput="handel_des"></textarea>
+  <input placeholder="用途（必填）" maxlength="15" type="text" bindinput="handel_title"></input>
+</view>
+<view class="item">
+  <textarea placeholder="详情描述～" bindinput="handel_des"></textarea>
 </view>
 <view hover-class="hover-class" bindtap="handel_add" class="submit">记一笔</view>

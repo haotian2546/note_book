@@ -1,5 +1,23 @@
-<view class="note_one iconfont icon-jizhang" bindtap="nav_list_add"></view>
+<wxs module="filter" src="../../utils/utils.wxs"></wxs>
 <view class="head">
   <view>{{info.title}}</view>
   <view>{{info.des}}</view>
+  <view class="touch">
+    <view>
+      流水共计
+      <text style="color:#25c587">{{info.total_num?info.total_num:0}}</text>
+      元
+    </view>
+    <view class="subbtn" bindtap="nav_list_add" hover-class="hover-class">记一笔</view>
+  </view>
+  <view wx:if="{{info.create_time}}">{{filter.allTime(info.create_time)}}</view>
 </view>
+<view wx:for="{{list}}" wx:key="{{item._id}}" class="item" hover-class="hover-class" data-id="{{item._id}}" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
+  <view>
+    <view>{{item.title}}</view>
+    <view>{{filter.money(item.num)}} 元</view>
+  </view>
+  <view>{{item.des}}</view>
+  <view>{{filter.allTime(item.create_time)}}</view>
+</view>
+<view class="nothing" wx:if="{{nothing}}">没有东西了...</view>
