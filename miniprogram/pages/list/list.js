@@ -11,7 +11,8 @@ Page({
     lists_id: '',
     list: [],
     nothing: false,
-    page: 0
+    page: 0,
+    admin: false
   },
 
   onLoad: function (options) {
@@ -30,11 +31,20 @@ Page({
       success: function (res) {
         that.setData({
           info: res.result
-        })
+        });
+        if (app.globalData.userInfo && res.result.author._id === app.globalData.userInfo._id) {
+          that.setData({
+            admin: true
+          })
+        }
       }
     })
   },
   getListNotes: function (type) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     let that = this;
     wx.cloud.callFunction({
       name: 'getListNotes',
@@ -127,4 +137,21 @@ Page({
     });
 
   },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: "有一个账单需要你过目",
+      path: '/pages/list/list?id=' + this.data.lists_id, //这里设定都是以"/page"开头,并拼接好传递的参数
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:");
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:");
+      }
+    }
+  }
 })

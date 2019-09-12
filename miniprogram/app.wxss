@@ -58,7 +58,8 @@ page{
 
 .nothing{
   margin: 0 auto;
-  padding: 40rpx;
+  padding: 20rpx;
+  padding-bottom: 80rpx;
   text-align: center;
   color: #666666;
 }

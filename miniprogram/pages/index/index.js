@@ -39,6 +39,10 @@ Page({
 
 
   getList: function (type = false) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     let that = this;
     wx.cloud.callFunction({
       name: 'getNotes',

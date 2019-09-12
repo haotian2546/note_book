@@ -1,8 +1,8 @@
 <view class="item">
-  <input bindinput="handel_title" placeholder="装修清单/婚宴清单/装修清单/旅行清单..." type="text" maxlength="15"></input>
+  <input bindinput="handel_title" placeholder="装修账单/婚宴账单/装修账单/旅行账单..." type="text" maxlength="15"></input>
 </view>
 <view class="item">
-  <input bindinput="handel_des" placeholder="一张有趣的清单～" type="text" maxlength="100"></input>
+  <input bindinput="handel_des" placeholder="一张有趣的账单～" type="text" maxlength="100"></input>
 </view>
 <!-- <view class="banner_box">
   <view class="title">选择背景图</view>
@@ -13,5 +13,5 @@
     </view>
   </view>
 </view> -->
-<view hover-class="hover-class" bindtap="handel_note_book" class="submit">创建这个清单</view>
-<view class="tips">该清单所记录的账目不会计入首页流水账目</view>
+<view hover-class="hover-class" bindtap="handel_note_book" class="submit">生成这个账单</view>
+<view class="tips">该账单所记录的账目不会计入首页流水账目</view>

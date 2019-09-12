@@ -14,7 +14,7 @@ Page({
     ],
     current_cover: 0,
     title: '',
-    des: '一张有趣的清单～',
+    des: '一张有趣的账单～',
   },
 
   /**

@@ -8,8 +8,8 @@
     <view class="lue">{{item.des}}</view>
     <view>
       <view>{{filter.allTime(item.create_time)}}</view>
-      <view>{{item.count}}条记录</view>
+      <view>{{item.count}} 条流水</view>
     </view>
   </navigator>
-  <view class="nothing" wx:if="{{nothing}}">没有东西了...</view>
+  <view class="nothing">{{nothing?'没有东西了...':''}}</view>
 </view>
