@@ -12,7 +12,7 @@ Page({
     list: [],
     nothing: false,
     page: 0,
-    admin: false
+    admin: false,
   },
 
   onLoad: function (options) {
@@ -20,7 +20,7 @@ Page({
       lists_id: options.id
     }, () => {
       this.getDes(options.id);
-      this.getListNotes()
+      this.getListNotes();
     });
   },
   getDes: function (id) {
@@ -155,5 +155,5 @@ Page({
         console.log("转发失败:");
       }
     }
-  }
+  },
 })

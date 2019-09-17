@@ -5,6 +5,6 @@
   <input placeholder="用途（必填）" maxlength="15" type="text" bindinput="handel_title"></input>
 </view>
 <view class="item">
-  <input placeholder="描述～"  type="text" bindinput="handel_des"></input>
+  <textarea placeholder="描述～"  type="text" bindinput="handel_des"></textarea>
 </view>
 <view hover-class="hover-class" bindtap="handel_add" class="submit">记一笔</view>
