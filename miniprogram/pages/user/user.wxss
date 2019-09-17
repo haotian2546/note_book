@@ -11,6 +11,7 @@
   border-radius: 100%;
   background-size: cover;
   margin-right: 40rpx;
+  background-color: #ffffff;
 }
 .user .user-info {
   display: flex;

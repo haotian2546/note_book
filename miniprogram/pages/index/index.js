@@ -78,38 +78,8 @@ Page({
   },
   //跳转记账页面
   nav_add_note: function () {
-    wx.getSetting({
-      success: (res) => {
-        if (res.authSetting['scope.userInfo']) {
-          if (app.globalData.userInfo) {
-            wx.navigateTo({
-              url: '/pages/note_add/note_add',
-            });
-          } else {
-            app.checkLoginReadyCallback = res => {
-              wx.navigateTo({
-                url: '/pages/note_add/note_add',
-              });
-            };
-          }
-        } else {
-          wx.showModal({
-            title: `授权`,
-            confirmText: '去授权',
-            cancelText: '再看看',
-            content: '授权解锁更多功能',
-            success: function (res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: '/pages/author/author',
-                });
-              } else if (res.cancel) {
-                return;
-              }
-            }
-          })
-        }
-      }
+    wx.navigateTo({
+      url: '/pages/note_add/note_add',
     });
 
   },

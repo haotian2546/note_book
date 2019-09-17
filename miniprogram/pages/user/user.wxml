@@ -1,12 +1,15 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<view class="button" hover-class="hover-class" wx:if="{{!auth}}" style="margin:100rpx auto;" bindtap="nav_to_auth">
-  去授权
-</view>
 <view class="user" wx:if="{{auth}}">
   <view class="user-avatar" style="background-image:url({{userInfo.avatarUrl}});"></view>
   <view class="user-info">
     <text>{{userInfo.nickName}}</text>
     <text>注册于{{filter.time(userInfo.create_time)}}</text>
+  </view>
+</view>
+<view class="user" wx:if="{{!auth}}">
+  <view class="user-avatar" style="background-image:url(../../images/dog.png);"></view>
+  <view class="user-info">
+    <text bindtap="nav_to_auth">登录/注册</text>
   </view>
 </view>
 <view class="count">

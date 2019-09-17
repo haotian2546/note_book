@@ -95,47 +95,49 @@ Page({
   },
   //删除一条记录
   del_note_handel: function (e) {
-    wx.showModal({
-      title: '警告',
-      content: '你确定要删除它吗？',
-      showCancel: true,
-      cancelText: '取消',
-      cancelColor: '#999999',
-      confirmText: '删除',
-      confirmColor: '#52495b',
-      success: (result) => {
-        if (result.confirm) {
-          wx.showLoading({
-            title: '正在删除',
-            mask: true,
-          });
-          db.collection('list_note').doc(e.currentTarget.dataset.id).remove({
-            success: res => {
-              wx.hideLoading();
-              if (res.stats.removed) {
+    if (this.data.admin) {
+
+      wx.showModal({
+        title: '警告',
+        content: '你确定要删除它吗？',
+        showCancel: true,
+        cancelText: '取消',
+        cancelColor: '#999999',
+        confirmText: '删除',
+        confirmColor: '#52495b',
+        success: (result) => {
+          if (result.confirm) {
+            wx.showLoading({
+              title: '正在删除',
+              mask: true,
+            });
+            db.collection('list_note').doc(e.currentTarget.dataset.id).remove({
+              success: res => {
+                wx.hideLoading();
+                if (res.stats.removed) {
+                  wx.showToast({
+                    icon: 'none',
+                    title: '删除成功',
+                  })
+                  this.setData({
+                    page: 0
+                  }, () => {
+                    this.getListNotes(true);
+                  })
+                }
+              },
+              fail: err => {
+                wx.hideLoading();
                 wx.showToast({
                   icon: 'none',
-                  title: '删除成功',
-                })
-                this.setData({
-                  page: 0
-                }, () => {
-                  this.getListNotes(true);
+                  title: '删除失败',
                 })
               }
-            },
-            fail: err => {
-              wx.hideLoading();
-              wx.showToast({
-                icon: 'none',
-                title: '删除失败',
-              })
-            }
-          })
+            })
+          }
         }
-      }
-    });
-
+      });
+    }
   },
   /**
    * 用户点击右上角分享

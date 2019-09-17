@@ -45,7 +45,41 @@ Page({
       this.getTags();
     })
   },
+
   submit_handel: function () {
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          if (app.globalData.userInfo) {
+            this.add_note()
+          } else {
+            app.checkLoginReadyCallback = res => {
+              this.add_note()
+            };
+          }
+        } else {
+          wx.showModal({
+            title: `授权`,
+            confirmText: '去授权',
+            cancelText: '再看看',
+            content: '该功能需要获取您的信息',
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '/pages/author/author',
+                });
+              } else if (res.cancel) {
+                return;
+              }
+            }
+          })
+        }
+      }
+    });
+
+
+  },
+  add_note:function () {
     if (!isNaN(this.data.money) && this.data.money > 0) {
       let data;
       if (this.data.type === 'tag_out') {
@@ -84,8 +118,6 @@ Page({
         mask: false,
       });
     }
-
-
   },
   remark: function (e) {
     this.setData({
