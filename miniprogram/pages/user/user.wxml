@@ -13,25 +13,13 @@
   </view>
 </view>
 <view class="count">
-  收入
-  <view style="color:#12d58b">{{count.income_num}}</view>
-  笔共
-  <view style="color:#12d58b">{{count.income}}</view>
-  元
-</view>
-<view class="count">
-  支出
-  <view style="color:red">{{count.expend_num}}</view>
-  笔共
-  <view style="color:red">{{count.expend}}</view>
-  元
-</view>
-<view class="count">
-  {{(count.income-count.expend)>0?'结余':'负债'}}
-  <view style="color:{{(count.income-count.expend)>0?'#12d58b':'red'}}">
-    {{(count.income-count.expend)>0?(count.income-count.expend):(count.income-count.expend)*-1}}
+  <view>
+    <view>收入 {{count.income_num}} 笔共 {{count.income}} 元</view>
+    <view>支出 {{count.expend_num}} 笔共 {{count.expend}} 元</view>
   </view>
-  块
+  <view style="color:{{(count.income-count.expend)>0?'#12d58b':'red'}}">
+    {{count.income-count.expend}}
+  </view>
 </view>
 <view class="list">
   <!-- <view class="list-item" bindtap="nav_to_diss" hover-class="hover-class">

@@ -1,6 +1,11 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view>
+<!-- <view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view> -->
 <view wx:if="{{!list.length}}" class="logo_loading iconfont icon-gou"></view>
+<view class="header">
+  <view>如果你真的愿意去努力，那么你人生最坏的结果，也不过是大器晚成。</view>
+  <!-- <view class="iconfont  icon-rili"  bindtap="nav_calendar"></view> -->
+  <view class="iconfont  icon-jizhang" bindtap="nav_add_note"></view>
+</view>
 <view style="margin-bottom:20rpx;">
   <view wx:for="{{list}}" wx:key="{{item._id}}" class="item" hover-class="hover-class" data-id="{{item._id}}" bindtap="nav_note_handel" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
     <view class="icon iconfont {{item.tag.icon}}"></view>
@@ -18,5 +23,5 @@
       <view style="font-size:25rpx;">{{filter.allTime(item.create_time)}}</view>
     </view>
   </view>
-    <view class="nothing">{{nothing?'没有东西了...':''}}</view>
+  <view class="nothing">{{nothing?'没有东西了...':''}}</view>
 </view>

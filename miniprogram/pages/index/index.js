@@ -92,6 +92,11 @@ Page({
     }
 
   },
+  nav_calendar:function name(params) {
+    wx.navigateTo({
+      url: '/pages/calendar/calendar'
+    });
+  },
   onPullDownRefresh: function () {
     this.setData({
       page: 0,

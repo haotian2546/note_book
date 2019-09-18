@@ -19,16 +19,17 @@
   justify-content: center;
 }
 .count {
-  padding: 0 20rpx;
-  background: #52495b;
   display: flex;
-  align-items: center;
-  color: #ffffff;
-  padding-bottom: 10rpx;
+  justify-content: space-between;
+  background: #52495b;
+  padding: 20rpx;
 }
-.count > view {
-  font-size: 50rpx;
-  padding: 0 10rpx;
+.count > view:nth-child(1) {
+  color: #ffffff;
+}
+.count > view:nth-child(2) {
+  font-size: 70rpx;
+  font-weight: 800;
 }
 .list .list-item {
   display: flex;
