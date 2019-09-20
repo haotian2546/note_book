@@ -1,71 +1,21 @@
 .note_one {
   position: fixed;
-  right: 100rpx;
-  bottom: 100rpx;
+  right: 90rpx;
+  bottom: 90rpx;
   color: #52495b;
-  font-size: 80rpx;
+  font-size: 70rpx;
   background: #f6f6f6;
   border-radius: 100%;
 }
-.header {
-  background: #52495b;
-  color: #f6f6f6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20rpx 20rpx;
-}
-.header > view:nth-child(1) {
-  flex: 1;
-}
-.header > view:nth-child(2) {
-  width: 70rpx;
-  text-align: center;
-  font-size: 60rpx;
-  margin-left: 50rpx;
-}
-.header > view:nth-child(3) {
-  width: 70rpx;
-  text-align: center;
-  font-size: 60rpx;
-  margin-left: 50rpx;
-}
-.pick_time {
-  background: #52495b;
-  height: 80rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-}
-.count {
-  padding: 20rpx;
-  padding-top: 0;
-  background: #52495b;
-  color: #ffffff;
-  display: flex;
-}
-.count view {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.count view view:nth-child(1) {
-  font-size: 25rpx;
-  margin-bottom: 10rpx;
-  text-align: center;
-}
-.count view view:nth-child(2) {
-  font-size: 40rpx;
-  text-align: center;
-}
 .item {
   padding: 20rpx;
-  margin-bottom: 5rpx;
+  margin: 20rpx;
   background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  border-radius: 20rpx;
+  box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .item .icon {
   width: 80rpx;

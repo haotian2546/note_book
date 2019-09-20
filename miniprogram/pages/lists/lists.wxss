@@ -7,8 +7,10 @@
 }
 .item {
   padding: 20rpx;
-  margin-bottom: 5rpx;
+  margin: 20rpx;
   background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .item > view:nth-child(1) {
   font-size: 30rpx;
