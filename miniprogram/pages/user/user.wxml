@@ -3,7 +3,6 @@
   <view class="user-avatar" style="background-image:url({{userInfo.avatarUrl}});"></view>
   <view class="user-info">
     <text>{{userInfo.nickName}}</text>
-    <text>注册于{{filter.time(userInfo.create_time)}}</text>
   </view>
 </view>
 <view class="user" wx:if="{{!auth}}">
