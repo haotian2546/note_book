@@ -84,6 +84,5 @@ Page({
     wx.navigateTo({
       url: '/pages/lists_add/lists_add',
     });
-
   },
 })

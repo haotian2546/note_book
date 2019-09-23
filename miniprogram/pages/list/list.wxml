@@ -2,6 +2,9 @@
 <view class="head">
   <view>{{info.title}}</view>
   <view>{{info.des}}</view>
+  <!-- <view class="draw">
+    <navigator url="{{'/pages/share/share?id='+lists_id}}" class="iconfont  icon-qr-code"></navigator>
+  </view> -->
   <view class="touch">
     <view>
       流水共计
@@ -22,3 +25,5 @@
   <view>{{filter.allTime(item.create_time)}}</view>
 </view>
 <view class="nothing">{{nothing?'没有东西了...':''}}</view>
+
+<!-- <image src="{{qrcode}}" /> -->

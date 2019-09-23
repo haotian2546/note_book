@@ -5,33 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    days_style: ['#52495b','#ffffff']
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
   dayClick: function (event) {
-    console.log(event.detail);
-    let year = event.detail.year;
-    let month = event.detail.month;
-    let day = event.detail.day;
-    let days_style = this.data.days_style;
-    days_style.pop();
-    days_style.push({
-      month: 'current',
-      day: day,
-      color: 'white',
-      background: '#52495b',
-      bottomText: '已签到',
-      fontSize: '40rpx'
-    });
-    this.setData({
-      days_style
-    });
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

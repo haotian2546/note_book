@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
   box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .item .icon {

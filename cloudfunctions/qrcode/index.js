@@ -11,11 +11,10 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   try {
-    const result = await cloud.openapi.wxacode.getUnlimited({
-      path: event.page,
-      scene:event.scene
+    const result = await cloud.openapi.wxacode.createQRCode({
+      path: event.path
     })
-    console.log(123,result)
+    console.log(123, result)
     return result
   } catch (err) {
     console.log(err)

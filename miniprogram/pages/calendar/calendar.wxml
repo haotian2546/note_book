@@ -1,8 +1,2 @@
 <!--pages/calendar/calendar.wxml-->
-<calendar 
-binddayClick="dayClick"
-weeks-type="cn"
-days-color="{{days_style}}"
-calendar-style="calendar"
-header-style="header"
-/>
+123

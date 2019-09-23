@@ -13,9 +13,11 @@ Page({
     nothing: false,
     page: 0,
     admin: false,
+    qrcode: ''
   },
 
   onLoad: function (options) {
+
     this.setData({
       lists_id: options.id
     }, () => {
@@ -144,7 +146,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "有一个账单需要你过目",
+      title: "有一个价" + this.data.info.total_num + "元的账单需要你过目",
       path: '/pages/list/list?id=' + this.data.lists_id, //这里设定都是以"/page"开头,并拼接好传递的参数
       success: function (res) {
         // 转发成功
@@ -156,4 +158,5 @@ Page({
       }
     }
   },
+
 })

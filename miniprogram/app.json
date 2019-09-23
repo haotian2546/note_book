@@ -9,7 +9,8 @@
     "pages/lists_add/lists_add",
     "pages/list/list",
     "pages/list_add/list_add",
-    "pages/calendar/calendar"
+    "pages/calendar/calendar",
+    "pages/share/share"
   ],
   "window": {
     "navigationBarTitleText": "Note",

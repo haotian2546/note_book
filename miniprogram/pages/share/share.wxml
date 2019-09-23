@@ -1,0 +1,2 @@
+<canvas class="can" canvas-id="myCanvas" style=""></canvas>
+<view  bindtap="saveImage">保存海报到本地</view>
