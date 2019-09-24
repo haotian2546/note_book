@@ -11,11 +11,14 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   if (event.id) {
+    await db.collection('list').doc(event.id).update({
+      data: { click: _.inc(1) }
+    })
     let list = (await db.collection('list').where({ _id: event.id }).get()).data[0];
     let list_notes = (await db.collection('list_note').where({ list: event.id }).get()).data;
     //获取当前清单里的记录的数量
     list.count = (await db.collection('list_note').where({ list: event.id }).count()).total;
-
+    
     //获取当前清单里的所有流水的总和
     let total_num = 0;
     for (let i = 0; i < list_notes.length; i++) {

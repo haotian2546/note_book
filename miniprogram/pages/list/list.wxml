@@ -1,6 +1,6 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
 <view class="head">
-  <view>{{info.title}}</view>
+  <view>{{info.title}} {{info.click}}阅</view>
   <view>{{info.des}}</view>
   <!-- <view class="draw">
     <navigator url="{{'/pages/share/share?id='+lists_id}}" class="iconfont  icon-qr-code"></navigator>
