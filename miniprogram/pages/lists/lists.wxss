@@ -40,6 +40,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20rpx 20rpx;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
 }
 .header > view:nth-child(1) {
   flex: 1;
