@@ -1,12 +1,9 @@
 .user {
   display: flex;
-  padding: 20rpx;
+  padding: 120rpx 30rpx;
   background: #52495b;
   color: #ffffff;
   padding-top: 0;
-  border-bottom-left-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
-  margin-bottom: 20rpx;
 }
 .user .user-avatar {
   width: 80rpx;
@@ -23,15 +20,16 @@
   font-size: 40rpx;
 }
 .count {
-  display: flex;
-  justify-content: space-between;
   background: #ffffff;
-  margin-bottom: 20rpx;
-  padding: 20rpx;
+  padding: 30rpx 20rpx;
+  margin: -90rpx 20rpx 20rpx;
+  border-radius: 30rpx;
+  box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
-.count > view:nth-child(2) {
-  font-size: 70rpx;
-  font-weight: 800;
+.count > view {
+  text-indent: 15rpx;
+  margin-bottom: 10rpx;
+  color: #52495b;
 }
 .list .list-item {
   display: flex;
