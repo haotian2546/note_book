@@ -10,7 +10,11 @@
     <view>{{item.title}}</view>
     <view class="lue">{{item.des}}</view>
     <view>
-      <view><text>{{filter.allTime(item.create_time)}} </text> <text wx:if="{{item.click}}">  阅 {{item.click}}</text></view>
+      <view>
+        <text>{{filter.allTime(item.create_time)}}</text>
+        <text>{{item.author.nickName}}</text>
+        <text wx:if="{{item.click}}">{{item.click}}</text>
+      </view>
       <view>{{item.count}} 条流水</view>
     </view>
   </navigator>

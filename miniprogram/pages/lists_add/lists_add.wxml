@@ -2,7 +2,7 @@
   <input bindinput="handel_title" placeholder="装修账单/婚宴账单/装修账单/旅行账单..." type="text" maxlength="15"></input>
 </view>
 <view class="item">
-  <input bindinput="handel_des" placeholder="一张有趣的账单～" type="text" maxlength="100"></input>
+  <textarea bindinput="handel_des" placeholder="一张有趣的账单～" type="text"></textarea>
 </view>
 <!-- <view class="banner_box">
   <view class="title">选择背景图</view>

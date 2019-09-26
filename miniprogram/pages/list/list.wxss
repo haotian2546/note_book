@@ -8,15 +8,27 @@
 .head > view {
   padding: 5rpx 0;
 }
-.head > view:nth-child(1) {
+.head > view:nth-child(2) {
   font-size: 34rpx;
   font-weight: 700;
 }
-.head > .draw > view,
-.head > .draw > navigator {
-  padding: 10rpx;
-  font-weight: 800;
-  font-size: 30rpx;
+.head > .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bfc2c7;
+}
+.head > .info > image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+}
+.head > .info > text,
+.head > .info > image {
+  margin-right: 20rpx;
+}
+.head > .info > text:last-child {
+  margin-right: 0;
 }
 .head > .touch {
   display: flex;

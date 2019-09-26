@@ -7,15 +7,25 @@
   &>view{
     padding: 5rpx 0;
   }
-  &>view:nth-child(1){
+  &>view:nth-child(2){
     font-size: 34rpx;
     font-weight: 700;
   }
-  &>.draw{
-    &>view,&>navigator{
-      padding: 10rpx;
-      font-weight: 800;
-      font-size: 30rpx;
+  &>.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bfc2c7;
+    &>image{
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 100%;
+    }
+    &>text,&>image{
+      margin-right: 20rpx;
+    }
+    &>text:last-child{
+      margin-right: 0;
     }
   }
   &>.touch{
