@@ -28,5 +28,5 @@
   <view>{{item.des}}</view>
   <view>{{filter.allTime(item.create_time)}}</view>
 </view>
-<view class="nothing">{{nothing?'没有东西了...':''}}</view>
+<view class="nothing">{{nothing?'—— 没有东西了 ——':''}}</view>
 <!-- <image src="{{qrcode}}" /> -->

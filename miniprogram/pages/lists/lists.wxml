@@ -18,5 +18,5 @@
       <view>{{item.count}} 条流水</view>
     </view>
   </navigator>
-  <view class="nothing">{{nothing?'没有东西了...':''}}</view>
+  <view class="nothing">{{nothing?'—— 没有东西了 ——':''}}</view>
 </view>
