@@ -43,10 +43,12 @@ Page({
     })
   },
   getListNotes: function (type) {
-    wx.showLoading({
-      title: '加载中...',
-      mask: true,
-    });
+    if (type) {
+      wx.showLoading({
+        title: '加载中...',
+        mask: true,
+      });
+    }
     let that = this;
     wx.cloud.callFunction({
       name: 'getListNotes',

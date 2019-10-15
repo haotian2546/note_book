@@ -9,13 +9,11 @@
 }
 .item {
   padding: 20rpx;
-  margin: 20rpx;
+  margin: 5rpx 0;
   background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border-radius: 10rpx;
-  box-shadow: 3px 4px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .item .icon {
   width: 80rpx;
