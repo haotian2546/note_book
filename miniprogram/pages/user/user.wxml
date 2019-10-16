@@ -12,15 +12,24 @@
   </view>
 </view>
 <view class="count">
-  <view>收入 {{count.income_num}} 笔,共 {{count.income}} 元</view>
-  <view>支出 {{count.expend_num}} 笔,共 {{count.expend}} 元</view>
-  <view style="color:{{(count.income-count.expend)>0?'#12d58b':'red'}}">
-    {{count.income-count.expend}}
+  <view>
+    <view>收入 {{count.income_num}} 笔</view>
+    <view>{{filter.fixMoney(count.income)}}</view>
+  </view>
+  <view>
+    <view>支出 {{count.expend_num}} 笔</view>
+    <view>{{filter.fixMoney(count.expend)}}</view>
+  </view>
+  <view>
+    <view>{{(count.income-count.expend)>0?'结余':'负债'}}</view>
+    <view style="color:{{(count.income-count.expend)>0?'#12d58b':'red'}};">
+      {{filter.fixMoney(count.income-count.expend)}}
+    </view>
   </view>
 </view>
 <view class="list">
   <button class="list-item" open-type="contact" hover-class="hover-class">
-    <i class="iconfont icon-zixun" style="color:red;"></i>
+    <i class="iconfont icon-zixun" style="color:#52495b;"></i>
     <text>意见/建议</text>
     <i class="iconfont  icon-icon_next_arrow"></i>
   </button>

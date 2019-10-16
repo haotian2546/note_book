@@ -119,8 +119,18 @@ function money(str) {
   // }
   return str;
 };
-
+function fixMoney(num) {
+  // let num = num > 0 ? num : num * (-1);
+  var a = (num / 10000).toFixed(1);
+  if (num >= 10000) {
+    return a + 'w+'
+  } else if (num <= -10000) {
+    return a * -1 + 'w+'
+  } else {
+    return num
+  }
+}
 
 module.exports = {
-  time: getDateDiff, richText: richText, allTime: allTime, money: money
+  time: getDateDiff, richText: richText, allTime: allTime, money: money, fixMoney: fixMoney
 }
