@@ -3,6 +3,7 @@
 <view wx:if="{{!list.length}}" class="logo_loading iconfont icon-gou"></view>
 <view style="margin-bottom:20rpx;">
   <view wx:for="{{list}}" wx:key="{{item._id}}" class="item" data-id="{{item._id}}" bindtap="nav_note_handel" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
+    <!-- <view class="tips" wx:show="{{filter.list_tip(list[index-1].create_time,item.create_time).show}}">{{filter.list_tip(list[index-1].create_time,item.create_time).text}}</view> -->
     <view class="icon iconfont {{item.tag.icon}}"></view>
     <view class="info">
       <view>

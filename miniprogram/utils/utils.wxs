@@ -131,6 +131,22 @@ function fixMoney(num) {
   }
 }
 
+
+function list_tip(time1, time2) {
+  console.log(getDate(time1).getMonth());
+  var month1 = getDate(time1).getMonth() + 1;
+  var year2 = getDate(time2).getFullYear();
+  var month2 = getDate(time2).getMonth() + 1;
+  // return month1 + '---' + month2
+  if (month1 - month2 > 0 || !month1) {
+    return { show: true, text: year2 + '-' + month2 }
+  } else {
+    return { show: false, text: year2 + '-' + month2 }
+  }
+}
+
+
 module.exports = {
-  time: getDateDiff, richText: richText, allTime: allTime, money: money, fixMoney: fixMoney
+  time: getDateDiff, richText: richText, allTime: allTime, money: money, fixMoney: fixMoney,
+  list_tip: list_tip
 }
