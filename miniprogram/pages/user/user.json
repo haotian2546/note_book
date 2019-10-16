@@ -1,5 +1,5 @@
 {
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark",
+  "backgroundColor": "#52495b",
   "navigationBarTitleText": "To Form A Habit"
 }
