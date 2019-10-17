@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tags: []
   },
 
   /**
@@ -15,6 +15,12 @@ Page({
    */
   onLoad: function (options) {
     wx.hideLoading();
+    db.collection('tag_in').orderBy('index', 'asc').get().then(res => {
+      console.log(res);
+      this.setData({
+        tags: res.data
+      });
+    })
   },
   onGotUserInfo: function (res) {
     if (res.detail.errMsg === 'getUserInfo:ok') {
@@ -61,15 +67,7 @@ Page({
                       }).get().then(res => {
                         app.globalData.userInfo = res.data[0];
                         app.globalData.auth = true;
-                        wx.showToast({
-                          title: '注册成功',
-                          icon: 'none',
-                        })
-                        wx.hideLoading();
-                        wx.reLaunch({
-                          url: '/pages/index/index',
-                        });
-
+                        this.ex_note_add(res.data[0]._id)
                       })
 
                     } else {
@@ -92,52 +90,25 @@ Page({
       })
     }
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  ex_note_add: function (id) {
+    let data = {
+      income: 99999,
+      remark: '财源广进（自动生成例子🌰,长按可删除）',
+      type: 'income',
+      tag: this.data.tags[0]._id,
+      author: id,
+      create_time: (new Date()).getTime(),
+      change_time: (new Date()).getTime(),
+    }
+    db.collection('note').add({ data }).then(res => {
+      wx.showToast({
+        title: '注册成功',
+        icon: 'none',
+      })
+      wx.hideLoading();
+      wx.reLaunch({
+        url: '/pages/index/index',
+      });
+    })
   }
 })

@@ -19,15 +19,30 @@ Page({
     wx.getSetting({
       success: (res) => {
         if (res.authSetting['scope.userInfo']) {
-          this.setData({
-            auth: true,
-          })
           if (app.globalData.userInfo) {
+            this.setData({
+              auth: true,
+            })
             this.getCount()
           } else {
-            app.checkLoginReadyCallback = res => {
-              this.getCount()
-            };
+            let that=this;
+            wx.cloud.callFunction({
+              name: 'login',
+              success: res => {
+                db.collection('user').where({
+                  _openid: res.result.openid
+                }).get().then(res => {
+                  if (res.data.length > 0) {
+                    that.globalData.userInfo = res.data[0];
+                    that.getCount()
+                  } else {
+                    that.setData({
+                      auth: false,
+                    })
+                  }
+                })
+              }
+            })
           }
         } else {
           this.setData({
@@ -58,6 +73,10 @@ Page({
           wx.hideLoading();
           wx.stopPullDownRefresh();
         })
+      },
+      error:function (err) {
+        wx.hideLoading();
+        wx.stopPullDownRefresh();
       }
     })
   },
@@ -73,46 +92,8 @@ Page({
       url: '/pages/author/author',
     });
   },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
     this.onLoad()
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

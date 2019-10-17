@@ -30,12 +30,18 @@
 .head > .info > text:last-child {
   margin-right: 0;
 }
-.head > .touch {
+.touch {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #52495b;
+  padding: 10rpx 20rpx;
+  color: #ffffff;
 }
-.head > .touch > .subbtn {
+.touch > .subbtn {
   padding: 10rpx 20rpx;
   background: #25c587;
   color: #ffffff;

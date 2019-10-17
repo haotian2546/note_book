@@ -11,7 +11,8 @@
     <text bindtap="nav_to_auth">登录/注册</text>
   </view>
 </view>
-<view class="count">
+<navigator url="{{'/pages/chart/chart'}}" class="count">
+  <!-- <view class="count"> -->
   <view>
     <view>收入 {{count.income_num}} 笔</view>
     <view>{{filter.fixMoney(count.income)}}</view>
@@ -26,7 +27,8 @@
       {{filter.fixMoney(count.income-count.expend)}}
     </view>
   </view>
-</view>
+  <!-- </view> -->
+</navigator>
 <view class="list">
   <button class="list-item" open-type="contact" hover-class="hover-class">
     <i class="iconfont icon-zixun" style="color:#52495b;"></i>

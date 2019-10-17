@@ -9,16 +9,14 @@
   </view>
   <view>{{info.title}}</view>
   <view>{{info.des}}</view>
-  <view class="touch">
-    <view>
-      流水共计
-      <text style="color:#25c587">{{info.total_num?info.total_num:0}}</text>
-      元
-    </view>
-    <view wx:if="{{admin}}" class="subbtn" bindtap="nav_list_add" hover-class="hover-class">
-      记一笔
-    </view>
+</view>
+<view class="touch">
+  <view>
+    流水共计
+    <text style="color:#25c587">{{info.total_num?info.total_num:0}}</text>
+    元
   </view>
+  <view wx:if="{{admin}}" class="subbtn" bindtap="nav_list_add" hover-class="hover-class">记一笔</view>
 </view>
 <view wx:for="{{list}}" wx:key="{{item._id}}" class="item" data-id="{{item._id}}" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
   <view>
