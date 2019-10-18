@@ -20,7 +20,7 @@ Page({
    */
   onLoad: function (options) {
     if (app.globalData.userInfo) {
-      this.getList(true)
+      this.getList(true);
     } else {
       app.checkLoginReadyCallback = res => {
         // this.setData({
@@ -37,17 +37,14 @@ Page({
 
   },
 
+ 
 
   getList: function (type = false) {
-    // wx.showLoading({
-    //   title: '加载中...',
-    //   mask: true,
-    // });
-    if(type){
+    if (type) {
       wx.showLoading({
-      title: '加载中...',
-      mask: true,
-    });
+        title: '加载中...',
+        mask: true,
+      });
     }
     let that = this;
     wx.cloud.callFunction({
@@ -98,7 +95,7 @@ Page({
     }
 
   },
-  nav_calendar:function name(params) {
+  nav_calendar: function name(params) {
     wx.navigateTo({
       url: '/pages/calendar/calendar'
     });

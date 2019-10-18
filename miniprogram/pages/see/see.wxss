@@ -1,0 +1,26 @@
+.item {
+  padding: 20rpx;
+  margin: 5rpx 0;
+  background: #ffffff;
+}
+.item > view:nth-child(1) {
+  font-size: 30rpx;
+  margin-bottom: 5rpx;
+}
+.item > view:nth-child(2) {
+  font-size: 25rpx;
+  color: #bfc2c7;
+  margin-bottom: 5rpx;
+}
+.item > view:nth-child(3) {
+  font-size: 25rpx;
+  color: #bfc2c7;
+  display: flex;
+  justify-content: space-between;
+}
+.item > view:nth-child(3) > view:nth-child(1) > text {
+  margin-right: 20rpx;
+}
+.item > view:nth-child(3) > view:nth-child(2) {
+  color: #25c587;
+}

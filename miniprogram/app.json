@@ -11,7 +11,8 @@
     "pages/list_add/list_add",
     "pages/calendar/calendar",
     "pages/share/share",
-    "pages/chart/chart"
+    "pages/chart/chart",
+    "pages/see/see"
   ],
   "window": {
     "navigationBarTitleText": "Note",

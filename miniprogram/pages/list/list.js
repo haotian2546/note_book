@@ -17,13 +17,13 @@ Page({
   },
 
   onLoad: function (options) {
-
     this.setData({
       lists_id: options.id
     }, () => {
       this.getDes(options.id);
       this.getListNotes();
     });
+    this.addFoot(options.id);
   },
   getDes: function (id) {
     let that = this;
@@ -76,6 +76,14 @@ Page({
             nothing: true,
           })
         }
+      }
+    })
+  },
+  addFoot: function (id) {
+    wx.cloud.callFunction({
+      name: 'newFoot',
+      data: {
+        list_id: id
       }
     })
   },

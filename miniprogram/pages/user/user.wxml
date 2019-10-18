@@ -35,4 +35,9 @@
     <text>意见/建议</text>
     <i class="iconfont  icon-icon_next_arrow"></i>
   </button>
+  <navigator url="{{'/pages/see/see'}}" class="list-item">
+    <i class="iconfont icon-see" style="color:#52495b;"></i>
+    <text>阅</text>
+    <i class="iconfont icon-icon_next_arrow"></i>
+  </navigator>
 </view>

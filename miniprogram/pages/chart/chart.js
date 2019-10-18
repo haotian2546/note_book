@@ -10,17 +10,26 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
+    title: {
+      text: '开发中',
+      subtext: '纯属虚构',
+      x: 'center'
+    },
+    tooltip: {
+      trigger: 'item',
+      formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
     backgroundColor: "#ffffff",
     color: ["#37A2DA", "#32C5E9", "#67E0E3", "#91F2DE", "#FFDB5C", "#FF9F7F"],
     series: [{
       label: {
         normal: {
-          fontSize: 14
+          fontSize: 20
         }
       },
       type: 'pie',
-      center: ['50%', '50%'],
-      radius: [0, '60%'],
+      center: ['50%', '35%'],
+      radius: [0, '40%'],
       data: [{
         value: 55,
         name: '北京'
@@ -53,22 +62,10 @@ function initChart(canvas, width, height) {
 }
 
 Page({
-  onShareAppMessage: function (res) {
-    return {
-      title: 'ECharts 可以在微信小程序中使用啦！',
-      path: '/pages/index/index',
-      success: function () { },
-      fail: function () { }
-    }
-  },
   data: {
     ec: {
     }
   },
-
-  onReady() {
-  },
-
   echartInit(e) {
     initChart(e.detail.canvas, e.detail.width, e.detail.height);
   }

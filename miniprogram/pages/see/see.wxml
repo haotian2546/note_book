@@ -1,0 +1,14 @@
+<!-- pages/see/see.wxml -->
+<wxs module="filter" src="../../utils/utils.wxs"></wxs>
+<view wx:if="{{!list.length}}" class="logo_loading iconfont icon-gou"></view>
+<view>
+  <navigator url="{{'/pages/list/list?id='+item._id}}" wx:for="{{list}}" wx:key="{{item._id}}" class="item">
+    <view>{{item.title}}</view>
+    <view class="lue">{{item.des}}</view>
+    <view>
+      <view>{{filter.allTime(item.create_time)}}</view>
+      <view  wx:if="{{item.click}}">{{item.click}}</view>
+    </view>
+  </navigator>
+  <view class="nothing">{{nothing?'—— 没有东西了 ——':''}}</view>
+</view>
