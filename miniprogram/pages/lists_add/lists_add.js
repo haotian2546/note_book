@@ -10,7 +10,8 @@ Page({
     covers: [
       'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1316.jpeg',
       'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1318.jpeg',
-      'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1315.jpeg', 'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1317.jpeg',
+      'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1315.jpeg', 
+      'cloud://dev-money.6465-dev-money/static/note_book_cover/WechatIMG1317.jpeg',
     ],
     current_cover: 0,
     title: '',
