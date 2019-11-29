@@ -1,5 +1,0 @@
-<view class="onc">
-  <button style="background:#52495b" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
-    授权并登录
-  </button>
-</view>

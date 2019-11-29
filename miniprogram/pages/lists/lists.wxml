@@ -4,9 +4,9 @@
   <view>如果你真的愿意去努力，那么你人生最坏的结果，也不过是大器晚成。</view>
   <view class="iconfont  icon-aadd" bindtap="nav_add_node_book"></view>
 </view>
-<view wx:if="{{!list.length}}" class="logo_loading iconfont icon-gou"></view>
+<view wx:if="{{!list.length}}" class="logo_loading iconfont  icon-hua"></view>
 <view>
-  <navigator url="{{'/pages/list/list?id='+item._id}}" wx:for="{{list}}" wx:key="{{item._id}}" class="item">
+  <navigator url="{{'/pages/list/list?id='+item._id}}" wx:for="{{list}}" wx:key="index" class="item">
     <view>{{item.title}}</view>
     <view class="lue">{{item.des}}</view>
     <view>

@@ -1,5 +1,7 @@
 .user {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 30rpx;
   background: #52495b;
   color: #ffffff;
@@ -14,9 +16,6 @@
   background-color: #ffffff;
 }
 .user .user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-size: 40rpx;
 }
 .count {

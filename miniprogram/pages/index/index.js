@@ -19,25 +19,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.getList(true);
-    } else {
-      app.checkLoginReadyCallback = res => {
-        // this.setData({
-        //   startDate: moment().month(moment().month()).startOf('month').valueOf(),
-        //   endDate: moment().month(moment().month()).endOf('month').valueOf(),
-        //   year: new Date().getFullYear(),
-        //   month: new Date().getMonth() + 1,
-        // }, () => {
-        //   this.getList()
-        // })
+    this.getList(true)
+    app.checkLoginReadyCallback = res => {
+      this.setData({
+        list: [],
+        page: 0,
+        nothing: false,
+        startDate: 0,
+        endDate: 0,
+      }, () => {
         this.getList(true)
-      };
-    }
-
+      })
+    };
   },
 
- 
+
 
   getList: function (type = false) {
     if (type) {
@@ -48,9 +44,8 @@ Page({
     }
     let that = this;
     wx.cloud.callFunction({
-      name: 'getNotes',
+      name: 'get_my_notes_v1',
       data: {
-        author: app.globalData.userInfo._id,
         page: that.data.page
       },
       success: function (res) {
@@ -166,6 +161,20 @@ Page({
   onReachBottom: function () {
     if (!this.data.nothing) {
       this.getList()
+    }
+  },
+  onShareAppMessage: function () {
+    return {
+      title: "",
+      path: '/pages/index/index?',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:");
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败");
+      }
     }
   },
 })

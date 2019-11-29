@@ -3,68 +3,32 @@ App({
   onLaunch: function () {
     let that = this;
     if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+      wx.showModal({
+        title: '系统提示',
+        content: '太 Low'
+      })
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        env: 'dev-money',
-        // env: 'pro-money',
+        // env: 'dev-money',
+        env: 'pro-money',
         traceUser: true,
+      });
+      wx.cloud.callFunction({
+        name: "add_user_v1",
+        success: function (res) {
+          console.log('查看是否生成用户信息', res.result);
+          if (that.checkLoginReadyCallback) {
+            that.checkLoginReadyCallback(res);
+          }
+        }
       })
     }
-
-    const db = wx.cloud.database();
-    // this.globalData = {
-    //   userInfo: {},
-    // };
-    wx.getSetting({
-      success: (res) => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          that.globalData.auth = true;
-          wx.showLoading({
-            title: '正在加载数据',
-            mask: true,
-            icon: 'loading'
-          });
-          wx.cloud.callFunction({
-            name: 'login',
-            success: res => {
-              db.collection('user').where({
-                _openid: res.result.openid
-              }).get().then(res => {
-                if (res.data.length > 0) {
-                  that.globalData.userInfo = res.data[0];
-                  if (this.checkLoginReadyCallback) {
-                    this.checkLoginReadyCallback(res.data[0]);
-                  }
-                } else {
-                  wx.redirectTo({
-                    url: '/pages/author/author',
-                  });
-                }
-                wx.hideLoading();
-              })
-            }
-          })
-        } else {
-          // wx.showToast({
-          //   title: '您的账号未授权',
-          //   icon: 'none',
-          //   duration: 2000,
-          //   success: () => {
-          //     wx.redirectTo({
-          //       url: '/pages/author/author',
-          //     });
-          //   }
-          // });
-        }
-      }
-    });
     if (wx.canIUse('getUpdateManager')) {
       const updateManager = wx.getUpdateManager()
       updateManager.onCheckForUpdate(function (res) {
-        console.log('onCheckForUpdate====', res)
+        // console.log('onCheckForUpdate====', res)
         // 请求完新版本信息的回调
         if (res.hasUpdate) {
           console.log('res.hasUpdate====')
@@ -73,7 +37,7 @@ App({
               title: '更新提示',
               content: '新版本已经准备好，是否重启应用？',
               success: function (res) {
-                console.log('success====', res)
+                // console.log('success====', res)
                 // res: {errMsg: "showModal: ok", cancel: false, confirm: true}
                 if (res.confirm) {
                   // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
@@ -92,6 +56,7 @@ App({
         }
       })
     }
+
   },
   globalData: {
     userInfo: null,

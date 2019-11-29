@@ -1,9 +1,0 @@
-.onc {
-  padding: 100rpx;
-}
-.texts {
-  padding: 20rpx;
-}
-.texts > view {
-  margin-bottom: 20rpx;
-}

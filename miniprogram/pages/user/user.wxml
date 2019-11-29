@@ -1,15 +1,13 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<view class="user" wx:if="{{auth}}">
+<view class="user" wx:if="{{userInfo.avatarUrl}}">
   <view class="user-avatar" style="background-image:url({{userInfo.avatarUrl}});"></view>
-  <view class="user-info">
-    <text>{{userInfo.nickName}}</text>
-  </view>
+  <text class="user-info">{{userInfo.nickName}}</text>
+  <view style="flex:1"></view>
 </view>
-<view class="user" wx:if="{{!auth}}">
-  <view class="user-avatar" style="background-image:url(../../images/dog.png);"></view>
-  <view class="user-info">
-    <text bindtap="nav_to_auth">登录/注册</text>
-  </view>
+<view class="user" wx:if="{{!userInfo.avatarUrl}}">
+  <button type="primary" style="background:#25c587;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="author_userinfo">
+    授权获取头像&昵称
+  </button>
 </view>
 <navigator url="{{'/pages/chart/chart'}}" class="count">
   <!-- <view class="count"> -->
@@ -35,9 +33,9 @@
     <text>意见/建议</text>
     <i class="iconfont  icon-icon_next_arrow"></i>
   </button>
-  <navigator url="{{'/pages/see/see'}}" class="list-item">
+  <!-- <navigator url="{{'/pages/see/see'}}" class="list-item">
     <i class="iconfont icon-see" style="color:#52495b;"></i>
     <text>阅</text>
     <i class="iconfont icon-icon_next_arrow"></i>
-  </navigator>
+  </navigator> -->
 </view>

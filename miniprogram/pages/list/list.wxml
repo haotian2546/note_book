@@ -1,5 +1,7 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
 <view class="head">
+  
+  <view>{{info.title}}</view>
   <view class="info">
     <image src="{{info.author.avatarUrl}}"></image>
     <text>{{info.author.nickName}}</text>
@@ -7,7 +9,6 @@
     <text style="flex:1"></text>
     <text>{{filter.allTime(info.create_time)}}</text>
   </view>
-  <view>{{info.title}}</view>
   <view>{{info.des}}</view>
 </view>
 <view class="touch">
@@ -16,9 +17,9 @@
     <text style="color:#25c587">{{info.total_num?info.total_num:0}}</text>
     元
   </view>
-  <view wx:if="{{admin}}" class="subbtn" bindtap="nav_list_add" hover-class="hover-class">记一笔</view>
+  <view class="subbtn" bindtap="nav_list_add" hover-class="hover-class">记一笔</view>
 </view>
-<view wx:for="{{list}}" wx:key="{{item._id}}" class="item" data-id="{{item._id}}" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
+<view wx:for="{{list}}" wx:key="index" class="item" data-id="{{item._id}}" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">
   <view>
     <view>{{item.title}}</view>
     <view>{{filter.money(item.num)}} 元</view>

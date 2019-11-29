@@ -16,13 +16,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.userInfo) {
-      this.getList(true)
-    } else {
-      app.checkLoginReadyCallback = res => {
-        this.getList(true)
-      };
-    }
+    this.getList(true);
+    app.checkLoginReadyCallback = res => {
+      this.getList(true);
+    };
   },
   getList: function (type = false) {
     if (type) {
@@ -33,9 +30,8 @@ Page({
     }
     let that = this;
     wx.cloud.callFunction({
-      name: 'getLists',
+      name: 'get_my_list_v1',
       data: {
-        author: app.globalData.userInfo._id,
         page: that.data.page
       },
       success: function (res) {

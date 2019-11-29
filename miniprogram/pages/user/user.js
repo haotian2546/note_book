@@ -8,7 +8,7 @@ Page({
    */
   data: {
     userInfo: {},
-    count: {},
+    count: { expend: 0, income: 0 },
     auth: true
   },
 
@@ -16,41 +16,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getSetting({
-      success: (res) => {
-        if (res.authSetting['scope.userInfo']) {
-          if (app.globalData.userInfo) {
-            this.setData({
-              auth: true,
-            })
-            this.getCount()
-          } else {
-            let that=this;
-            wx.cloud.callFunction({
-              name: 'login',
-              success: res => {
-                db.collection('user').where({
-                  _openid: res.result.openid
-                }).get().then(res => {
-                  if (res.data.length > 0) {
-                    that.globalData.userInfo = res.data[0];
-                    that.getCount()
-                  } else {
-                    that.setData({
-                      auth: false,
-                    })
-                  }
-                })
-              }
-            })
-          }
-        } else {
-          this.setData({
-            auth: false,
-          })
-        }
-      }
-    });
+    this.getCount()
+    app.checkLoginReadyCallback = res => {
+      this.setData({
+        userInfo: {},
+        count: {},
+      }, () => {
+        this.getCount()
+      })
+    };
   },
   getCount: function () {
     wx.showLoading({
@@ -58,39 +32,49 @@ Page({
       mask: true,
     });
     let that = this;
-    this.setData({
-      userInfo: app.globalData.userInfo
-    });
     wx.cloud.callFunction({
-      name: 'userCount',
-      data: {
-        author: app.globalData.userInfo._id
-      },
+      name: 'get_my_v1',
       success: function (res) {
+        console.log(res);
         that.setData({
-          count: res.result
+          count: res.result,
+          userInfo: res.result.user,
         }, () => {
           wx.hideLoading();
           wx.stopPullDownRefresh();
         })
       },
-      error:function (err) {
+      error: function (err) {
         wx.hideLoading();
         wx.stopPullDownRefresh();
       }
     })
   },
+  author_userinfo: function (res) {
+    let that=this;
+    if (res.detail.errMsg === 'getUserInfo:ok') {
+      wx.cloud.callFunction({
+        name: 'up_user_v1',
+        data: {
+          updata: {
+            avatarUrl: res.detail.userInfo.avatarUrl,
+            nickName: res.detail.userInfo.nickName,
+            gender: res.detail.userInfo.gender,
+            change_time: (new Date()).getTime(),
+          }
+        },
+        success: function (res) {
+          that.getCount()
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    // wx.hideLoading();
-  },
-  nav_to_auth: function () {
-    wx.navigateTo({
-      url: '/pages/author/author',
-    });
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '授权失败',
+        icon: 'none',
+      })
+    }
+
   },
   onPullDownRefresh: function () {
     this.onLoad()

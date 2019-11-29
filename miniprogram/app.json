@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/user/user",
     "pages/note_add/note_add",
-    "pages/author/author",
     "pages/note/note",
     "pages/lists/lists",
     "pages/lists_add/lists_add",
@@ -11,7 +10,6 @@
     "pages/list_add/list_add",
     "pages/calendar/calendar",
     "pages/share/share",
-    "pages/chart/chart",
     "pages/see/see"
   ],
   "window": {

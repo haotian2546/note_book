@@ -19,21 +19,30 @@ Page({
     })
   },
   handel_add: function () {
+    let that = this;
     if (this.data.num > 0 && !isNaN(this.data.num) && this.data.id && this.data.title) {
+      wx.showLoading({
+        title: '正在插入数据',
+        mask: true,
+      });
       let data = {
         list: this.data.id,
         num: this.data.num,
         title: this.data.title,
         des: this.data.des,
-        author: app.globalData.userInfo._id,
+        // author: app.globalData.userInfo._id,
         create_time: (new Date()).getTime(),
         change_time: (new Date()).getTime(),
       }
-      db.collection('list_note').add({ data }).then(res => {
-        wx.redirectTo({
-          url: '/pages/list/list?id=' + this.data.id,
-        });
-
+      wx.cloud.callFunction({
+        name: 'add_my_listnote_v1',
+        data: { listnote: data },
+        success: function (res) {
+          wx.hideLoading();
+          wx.redirectTo({
+            url: '/pages/list/list?id=' + that.data.id,
+          });
+        }
       })
     } else {
       wx.showToast({
@@ -59,21 +68,4 @@ Page({
       title: e.detail.value
     })
   },
-
-
-
-
-
-
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
-  }
 })

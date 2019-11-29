@@ -47,67 +47,48 @@ Page({
   },
 
   submit_handel: function () {
-    wx.getSetting({
-      success: (res) => {
-        if (res.authSetting['scope.userInfo']) {
-          if (app.globalData.userInfo) {
-            this.add_note()
-          } else {
-            app.checkLoginReadyCallback = res => {
-              this.add_note()
-            };
-          }
-        } else {
-          wx.showModal({
-            title: `授权`,
-            confirmText: '去授权',
-            cancelText: '再看看',
-            content: '该功能需要获取您的信息',
-            success: function (res) {
-              if (res.confirm) {
-                wx.navigateTo({
-                  url: '/pages/author/author',
-                });
-              } else if (res.cancel) {
-                return;
-              }
-            }
-          })
-        }
+    let data;
+    if (this.data.type === 'tag_out') {
+      data = {
+        expend: this.data.money,
+        remark: this.data.remark,
+        type: 'expend',
+        tag: this.data.tags[this.data.current_tag]._id,
+        // author: app.globalData.userInfo._id,
+        create_time: (new Date()).getTime(),
+        change_time: (new Date()).getTime(),
       }
-    });
-
-
-  },
-  add_note:function () {
+    } else if (this.data.type === 'tag_in') {
+      data = {
+        income: this.data.money,
+        remark: this.data.remark,
+        type: 'income',
+        tag: this.data.tags[this.data.current_tag]._id,
+        // author: app.globalData.userInfo._id,
+        create_time: (new Date()).getTime(),
+        change_time: (new Date()).getTime(),
+      }
+    }
     if (!isNaN(this.data.money) && this.data.money > 0) {
-      let data;
-      if (this.data.type === 'tag_out') {
-        data = {
-          expend: this.data.money,
-          remark: this.data.remark,
-          type: 'expend',
-          tag: this.data.tags[this.data.current_tag]._id,
-          author: app.globalData.userInfo._id,
-          create_time: (new Date()).getTime(),
-          change_time: (new Date()).getTime(),
+      wx.cloud.callFunction({
+        name: 'add_note_v1',
+        data: { note: data },
+        success: function (res) {
+          console.log(res);
+          if (res.result._id) {
+            wx.reLaunch({
+              url: '/pages/index/index',
+            });
+          } else {
+            wx.showToast({
+              title: res.result.errMsg,
+              icon: 'none',
+              image: '',
+              duration: 1500,
+              mask: false,
+            });
+          }
         }
-      } else if (this.data.type === 'tag_in') {
-        data = {
-          income: this.data.money,
-          remark: this.data.remark,
-          type: 'income',
-          tag: this.data.tags[this.data.current_tag]._id,
-          author: app.globalData.userInfo._id,
-          create_time: (new Date()).getTime(),
-          change_time: (new Date()).getTime(),
-        }
-      }
-      db.collection('note').add({ data }).then(res => {
-        wx.reLaunch({
-          url: '/pages/index/index',
-        });
-
       })
     } else {
       wx.showToast({

@@ -8,7 +8,7 @@
 .head > view {
   padding: 5rpx 0;
 }
-.head > view:nth-child(2) {
+.head > view:nth-child(1) {
   font-size: 34rpx;
   font-weight: 700;
 }

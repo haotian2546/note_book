@@ -31,7 +31,7 @@ page{
   -ms-transform: translate(-50%, -50%); 
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-size: 300rpx;
+  font-size: 100rpx;
   color: #52495b;
 }
 

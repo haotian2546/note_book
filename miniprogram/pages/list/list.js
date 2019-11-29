@@ -17,6 +17,10 @@ Page({
   },
 
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+      mask: true,
+    });
     this.setData({
       lists_id: options.id
     }, () => {
@@ -28,30 +32,20 @@ Page({
   getDes: function (id) {
     let that = this;
     wx.cloud.callFunction({
-      name: 'getLists',
+      name: 'get_my_list_v1',
       data: { id: id },
       success: function (res) {
         that.setData({
           info: res.result
         });
-        if (app.globalData.userInfo && res.result.author._id === app.globalData.userInfo._id) {
-          that.setData({
-            admin: true
-          })
-        }
+        wx.hideLoading();
       }
     })
   },
   getListNotes: function (type) {
-    if (type) {
-      wx.showLoading({
-        title: '加载中...',
-        mask: true,
-      });
-    }
     let that = this;
     wx.cloud.callFunction({
-      name: 'getListNotes',
+      name: 'get_my_listnote_v1',
       data: { id: that.data.lists_id, page: that.data.page },
       success: (res) => {
         if (type) {
@@ -59,7 +53,6 @@ Page({
             list: res.result,
             page: that.data.page + 1
           }, () => {
-            wx.hideLoading();
             wx.stopPullDownRefresh();
           })
         } else {
@@ -67,7 +60,6 @@ Page({
             list: that.data.list.concat(res.result),
             page: that.data.page + 1
           }, () => {
-            wx.hideLoading();
             wx.stopPullDownRefresh();
           })
         }
@@ -88,7 +80,7 @@ Page({
     })
   },
   nav_list_add: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/list_add/list_add?id=' + this.data.lists_id,
     });
   },
