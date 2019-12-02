@@ -1,0 +1,32 @@
+.list .list-item {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  padding: 0 20rpx;
+  background: #ffffff;
+  margin-bottom: 10rpx;
+}
+.list .list-item i:nth-child(1) {
+  margin-right: 20rpx;
+  font-size: 43rpx;
+}
+.list .list-item text:nth-child(2) {
+  flex: 1;
+  text-align: left;
+  font-size: 30rpx;
+}
+.list .list-item .round {
+  color: red;
+  padding-right: 20rpx;
+}
+.list > button {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 0;
+  border: 0;
+}
+.list > button::after {
+  border: none;
+  border-radius: 0;
+}

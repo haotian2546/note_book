@@ -30,6 +30,6 @@ exports.main = async (event, context) => {
   for (let i = 0; i < list.length; i++) {
     let author = (await db.collection('user').where({ _openid: wxContext.OPENID }).get()).data[0];
     list[i].author = author;
-  }
+  };
   return list;
 }

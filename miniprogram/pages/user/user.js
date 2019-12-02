@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
+    userInfo: { avatarUrl: '123' },
     count: { expend: 0, income: 0 },
     auth: true
   },
@@ -28,7 +28,7 @@ Page({
   },
   getCount: function () {
     wx.showLoading({
-      title: '疯狂计算ing',
+      title: 'loading...',
       mask: true,
     });
     let that = this;
@@ -51,7 +51,11 @@ Page({
     })
   },
   author_userinfo: function (res) {
-    let that=this;
+    wx.showLoading({
+      title: 'loading...',
+      mask: true,
+    });
+    let that = this;
     if (res.detail.errMsg === 'getUserInfo:ok') {
       wx.cloud.callFunction({
         name: 'up_user_v1',

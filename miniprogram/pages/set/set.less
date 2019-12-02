@@ -1,0 +1,34 @@
+.list{
+  .list-item{
+    display: flex;
+    align-items: center;
+    height: 100rpx;
+    padding: 0 20rpx;
+    background: #ffffff;
+    margin-bottom: 10rpx;
+    i:nth-child(1){
+      margin-right: 20rpx;
+      font-size:43rpx;
+    }
+    text:nth-child(2){
+      flex: 1;
+      text-align: left;
+      font-size:30rpx;
+    }
+    .round{
+      color: red;
+      padding-right: 20rpx;
+    }
+  }
+  &>button{
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 0;
+    border: 0;
+  }
+  &>button::after {
+    border: none;
+    border-radius: 0;
+  }
+}

@@ -38,4 +38,9 @@
     <text>阅</text>
     <i class="iconfont icon-icon_next_arrow"></i>
   </navigator> -->
+  <navigator url="{{'/pages/set/set'}}" class="list-item">
+    <i class="iconfont  icon-setup" style="color:#52495b;"></i>
+    <text>设置</text>
+    <i class="iconfont icon-icon_next_arrow"></i>
+  </navigator>
 </view>

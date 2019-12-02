@@ -70,6 +70,10 @@ Page({
       }
     }
     if (!isNaN(this.data.money) && this.data.money > 0) {
+      wx.showLoading({
+        title: '正在记账...',
+        mask: true,
+      });
       wx.cloud.callFunction({
         name: 'add_note_v1',
         data: { note: data },

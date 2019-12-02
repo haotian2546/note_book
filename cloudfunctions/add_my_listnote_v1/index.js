@@ -19,11 +19,16 @@ exports.main = async (event, context) => {
   //   unionid: wxContext.UNIONID,
   // }
   let listnote_data = event.listnote;
-  listnote_data._openid = wxContext.OPENID
+  let the_list = (await db.collection('list').doc(listnote_data.list).get()).data;
+  if (the_list._openid === wxContext.OPENID) {
+    listnote_data._openid = wxContext.OPENID
+    let list_note = await db.collection('list_note').add({ data: listnote_data });
+    return list_note;
+  } else {
+    return { msg: '没有权限' };
+  }
 
-  let list_note = await db.collection('list_note').add({ data: listnote_data });
 
-  return list_note;
 
 
 
