@@ -40,7 +40,7 @@ exports.main = async (event, context) => {
     let list_notes = (await db.collection('list_note').where({ list: event.id }).get()).data;
     let total_num = 0;
     for (let i = 0; i < list_notes.length; i++) {
-      total_num += list_notes[i].num * 1;
+      total_num = total_num + list_notes[i].num * 1;
     }
     the_list.total_num = total_num;
 
