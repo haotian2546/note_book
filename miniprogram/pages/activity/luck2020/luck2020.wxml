@@ -1,0 +1,10 @@
+<canvas class="canvas" canvas-id="myCanvas"></canvas>
+<button class="but_check" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="author_userinfo">
+  查看我的2020
+</button>
+<view class="mask_box" wx:if="{{img_path}}">
+  <view>
+    <image src="{{img_path}}" mode="widthFix" lazy-load="false"></image>
+    <view bindtap="save_img">保存相册</view>
+  </view>
+</view>

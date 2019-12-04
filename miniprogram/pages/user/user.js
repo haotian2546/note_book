@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: { avatarUrl: '123' },
+    userInfo: {},
     count: { expend: 0, income: 0 },
     auth: true
   },

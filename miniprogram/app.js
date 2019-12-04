@@ -11,8 +11,8 @@ App({
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        // env: 'dev-money',
-        env: 'pro-money',
+        env: 'dev-money',
+        // env: 'pro-money',
         traceUser: true,
       });
       wx.cloud.callFunction({
@@ -41,6 +41,8 @@ App({
                 // res: {errMsg: "showModal: ok", cancel: false, confirm: true}
                 if (res.confirm) {
                   // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+                  updateManager.applyUpdate()
+                }else{
                   updateManager.applyUpdate()
                 }
               }

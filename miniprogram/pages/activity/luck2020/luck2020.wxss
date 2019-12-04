@@ -1,0 +1,49 @@
+.but_check {
+  width: 300rpx;
+  height: 70rpx;
+  text-align: center;
+  background: #52495b;
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  border-radius: 60rpx;
+  margin: 200rpx auto;
+}
+.canvas {
+  width: 900px;
+  height: 1400px;
+  position: fixed;
+  left: 10000000px;
+  top: 1000000px;
+}
+.mask_box {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.mask_box > view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.mask_box > view > image {
+  margin: 0 auto;
+  width: 700rpx;
+  display: block;
+}
+.mask_box > view > view {
+  width: 300rpx;
+  height: 70rpx;
+  text-align: center;
+  background: #12d58b;
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  margin-top: 50rpx;
+}

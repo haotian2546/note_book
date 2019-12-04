@@ -11,10 +11,12 @@
     "pages/calendar/calendar",
     "pages/share/share",
     "pages/see/see",
-    "pages/set/set"
+    "pages/set/set",
+    "pages/more/more",
+    "pages/activity/luck2020/luck2020"
   ],
   "window": {
-    "navigationBarTitleText": "Note",
+    "navigationBarTitleText": "记账",
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#52495b",
