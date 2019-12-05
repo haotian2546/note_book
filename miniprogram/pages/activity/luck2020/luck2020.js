@@ -217,5 +217,19 @@ Page({
         });
       }
     })
-  }
+  },
+  onShareAppMessage: function () {
+    return {
+      title: "我的2020",
+      path: '/pages/activity/luck2020/luck2020',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:");
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败");
+      }
+    }
+  },
 })
