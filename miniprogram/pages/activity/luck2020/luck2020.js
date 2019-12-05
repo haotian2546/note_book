@@ -82,7 +82,7 @@ Page({
 
   author_userinfo: function (res) {
     wx.showLoading({
-      title: '海报生成中...',
+      title: '绘制海报',
       mask: true,
     });
     let that = this;
