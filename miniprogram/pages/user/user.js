@@ -82,6 +82,6 @@ Page({
   },
   onPullDownRefresh: function () {
     this.onLoad()
-  },
+  }
 
 })
