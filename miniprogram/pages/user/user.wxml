@@ -29,23 +29,24 @@
 </navigator>
 <view class="list">
   <button class="list-item" open-type="contact" hover-class="hover-class">
-    <i class="iconfont icon-zixun" style="color:#52495b;"></i>
+    <i class="iconfont icon-message" style="color:#52495b;"></i>
     <text>意见/建议</text>
-    <i class="iconfont    icon-arr"></i>
+    <i class="iconfont icon-arr"></i>
   </button>
-  <!-- <navigator url="{{'/pages/see/see'}}" class="list-item">
-    <i class="iconfont icon-see" style="color:#52495b;"></i>
-    <text>阅</text>
-    <i class="iconfont icon-icon_next_arrow"></i>
-  </navigator> -->
+  <navigator url="{{'/pages/message/message'}}" class="list-item">
+    <i class="iconfont icon-tongzhi" style="color:#52495b;"></i>
+    <text>消息</text>
+    <i class="iconfont icon-dian" style="font-size:100rpx;color:red;margin-right:-30rpx;"></i>
+    <i class="iconfont icon-arr"></i>
+  </navigator>
   <navigator url="{{'/pages/set/set'}}" class="list-item">
-    <i class="iconfont  icon-setup" style="color:#52495b;"></i>
+    <i class="iconfont icon-setup" style="color:#52495b;"></i>
     <text>设置</text>
-    <i class="iconfont  icon-arr"></i>
+    <i class="iconfont icon-arr"></i>
   </navigator>
   <navigator url="{{'/pages/more/more'}}" class="list-item">
-    <i class="iconfont  icon-more2" style="color:#52495b;"></i>
+    <i class="iconfont icon-more2" style="color:#52495b;"></i>
     <text>更多</text>
-    <i class="iconfont  icon-arr"></i>
+    <i class="iconfont icon-arr"></i>
   </navigator>
 </view>

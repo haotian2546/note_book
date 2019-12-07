@@ -13,6 +13,7 @@
     "pages/see/see",
     "pages/set/set",
     "pages/more/more",
+    "pages/message/message",
     "pages/activity/luck2020/luck2020"
   ],
   "window": {
