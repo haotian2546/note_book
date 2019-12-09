@@ -1,10 +1,10 @@
 .but_check {
   width: 300rpx;
-  height: 70rpx;
+  height: 90rpx;
   text-align: center;
   background: #52495b;
   color: #ffffff;
-  line-height: 60rpx;
+  line-height: 90rpx;
   font-size: 30rpx;
   border-radius: 60rpx;
   margin: 200rpx auto;
@@ -32,7 +32,7 @@
 }
 .mask_box > view > image {
   margin: 0 auto;
-  width: 700rpx;
+  width: 500rpx;
   display: block;
 }
 .mask_box > view > view {
@@ -45,5 +45,29 @@
   font-size: 30rpx;
   margin: 0 auto;
   border-radius: 60rpx;
-  margin-top: 50rpx;
+  margin-top: 30rpx;
+}
+.mask_box > view > button {
+  width: 300rpx;
+  height: 70rpx;
+  text-align: center;
+  background: #52495b;
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  margin-top: 30rpx;
+}
+.mask_box > view .others {
+  width: 300rpx;
+  height: 70rpx;
+  text-align: center;
+  background: #52495b;
+  color: #ffffff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  margin-top: 30rpx;
 }

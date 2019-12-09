@@ -6,5 +6,11 @@
   <view>
     <image src="{{img_path}}" mode="widthFix" lazy-load="false"></image>
     <view bindtap="save_img">保存相册</view>
+    <button class="again" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="author_userinfo">
+      再来一次
+    </button>
+    <navigator open-type="switchTab" url="{{'/pages/index/index'}}" class="others">
+      看看别的
+    </navigator>
   </view>
 </view>

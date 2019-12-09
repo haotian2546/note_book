@@ -11,14 +11,14 @@ App({
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        env: 'dev-money',
-        // env: 'pro-money',
+        // env: 'dev-money',
+        env: 'pro-money',
         traceUser: true,
       });
       wx.cloud.callFunction({
         name: "add_user_v1",
         success: function (res) {
-          console.log('查看是否生成用户信息', res.result);
+          // console.log('查看是否生成用户信息', res.result);
           if (that.checkLoginReadyCallback) {
             that.checkLoginReadyCallback(res);
           }
