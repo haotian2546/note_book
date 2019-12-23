@@ -5,7 +5,7 @@
   padding: 30rpx;
   background: #52495b;
   color: #ffffff;
-  padding-top: 0;
+  padding-top: 100rpx;
 }
 .user .user-avatar {
   width: 80rpx;

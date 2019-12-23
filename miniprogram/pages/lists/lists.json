@@ -1,5 +1,8 @@
 {
   "enablePullDownRefresh": true,
   "backgroundColor": "#52495b",
-  "navigationBarTitleText": "账单列表"
+  "navigationBarTitleText": "账单列表",
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/navbar"
+  }
 }

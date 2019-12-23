@@ -1,6 +1,6 @@
 <!-- pages/set/set.wxml -->
 
-
+<nav-bar></nav-bar>
 
 
 

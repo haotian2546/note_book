@@ -1,12 +1,3 @@
-.note_one {
-  position: fixed;
-  right: 90rpx;
-  bottom: 90rpx;
-  color: #52495b;
-  font-size: 70rpx;
-  background: #f6f6f6;
-  border-radius: 100%;
-}
 .item {
   padding: 20rpx;
   margin: 5rpx 0;

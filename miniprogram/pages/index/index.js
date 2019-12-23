@@ -13,9 +13,6 @@ Page({
     nothing: false,
     startDate: 0,
     endDate: 0,
-    // / 组件所需的参数
-    showNav: true,
-    showHome: true,
   },
 
   /**

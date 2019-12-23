@@ -1,4 +1,5 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
+<nav-bar></nav-bar>
 <view class="box">
   <view class="item">
     <view>金额</view>

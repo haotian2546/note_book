@@ -1,13 +1,26 @@
 <view class="diy_nav">
   <view class="nav" style="height:{{nav_global.navH}}px;padding-top:{{nav_global.statusBarH}}px">
-    <view bindtap='_nav_back' wx:if="{{show_back}}">
+    <!-- 返回按钮 -->
+    <navigator delta="1" open-type="navigateBack" wx:if="{{show_back}}">
       <image src='/images/nav/left.png' mode='aspectFill'></image>
-    </view>
+    </navigator>
+    <!-- 回到首页按钮 -->
     <navigator open-type="switchTab" wx:if="{{show_home}}" url="{{'/pages/index/index'}}">
       <image src='/images/nav/home.png' mode='aspectFill'></image>
     </navigator>
-    <view bindtap='_nav_home' wx:if="{{show_add}}">
+    <!-- 首页记账按钮 -->
+    <navigator wx:if="{{show_addnote}}" url="{{'/pages/note_add/note_add'}}">
       <image src='/images/nav/add.png' mode='aspectFill'></image>
+    </navigator>
+    <!-- 添加清单按钮 -->
+    <navigator wx:if="{{show_addlists}}" url="{{'/pages/lists_add/lists_add'}}">
+      <image src='/images/nav/add.png' mode='aspectFill'></image>
+    </navigator>
+    <view wx:if="{{show_avatar}}" class="avatar">
+      <image src='{{show_avatar}}' mode='aspectFill'></image>
+    </view>
+    <view wx:if="{{show_name}}" class="name">
+      <p>{{show_name}}</p>
     </view>
   </view>
 </view>

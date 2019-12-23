@@ -10,7 +10,6 @@
   justify-content: flex-start;
   align-items: center;
 }
-.diy_nav .nav view,
 .diy_nav .nav navigator {
   width: 70rpx;
   height: 70rpx;
@@ -19,9 +18,29 @@
   justify-content: center;
   align-items: center;
 }
-.diy_nav .nav view image,
 .diy_nav .nav navigator image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
   display: block;
+}
+.diy_nav .nav navigator:first-child {
+  margin-left: 10rpx;
+}
+.diy_nav .nav .avatar {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+.diy_nav .nav .avatar image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.diy_nav .nav .name {
+  margin-left: 20rpx;
+}
+.diy_nav .nav .name p {
+  color: #ffffff;
 }

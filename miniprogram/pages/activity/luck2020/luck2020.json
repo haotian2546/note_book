@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "我的2020"
+  "navigationBarTitleText": "我的2020",
+  "usingComponents": {
+    "nav-bar": "../../../components/navbar/navbar"
+  }
 }

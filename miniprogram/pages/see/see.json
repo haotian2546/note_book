@@ -1,5 +1,8 @@
 {
   "enablePullDownRefresh": true,
   "backgroundColor": "#52495b",
-  "navigationBarTitleText": "阅"
+  "navigationBarTitleText": "阅",
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/navbar"
+  }
 }

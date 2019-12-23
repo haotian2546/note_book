@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/navbar"
+  }
 }

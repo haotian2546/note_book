@@ -7,16 +7,28 @@ Component({
   properties: {
     show_back: {
       type: Boolean,
-      value: false
+      value: true
     },
     show_home: {
       type: Boolean,
       value: false
     },
-    show_add: {
+    show_addnote: {
       type: Boolean,
       value: false
     },
+    show_addlists: {
+      type: Boolean,
+      value: false
+    },
+    show_avatar: {
+      type: String,
+      value: ''
+    },
+    show_name: {
+      type: String,
+      value: ''
+    }
   },
 
   /**

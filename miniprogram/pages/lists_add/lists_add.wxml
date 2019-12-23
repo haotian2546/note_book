@@ -1,3 +1,4 @@
+<nav-bar></nav-bar>
 <view class="item">
   <input bindinput="handel_title" placeholder="装修账单/婚宴账单/装修账单/旅行账单..." type="text" maxlength="15"></input>
 </view>

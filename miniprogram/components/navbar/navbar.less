@@ -8,18 +8,38 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    view,navigator{
+    navigator{
       width: 70rpx;
       height: 70rpx;
       border-radius: 100%;
-
       display: flex;
       justify-content: center;
       align-items: center;
       image{
-        width: 50rpx;
-        height: 50rpx;
+        width: 60rpx;
+        height: 60rpx;
         display: block;
+      }
+    }
+    navigator:first-child{
+      margin-left: 10rpx;
+    }
+    .avatar{
+      width: 45rpx;
+      height: 45rpx;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-left: 20rpx;
+      image{
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+    .name{
+      margin-left: 20rpx;
+      p{
+        color: #ffffff;
       }
     }
   }

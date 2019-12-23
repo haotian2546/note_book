@@ -1,5 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "backgroundColor": "#52495b",
-  "navigationBarTitleText": ""
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/navbar"
+  }
 }
