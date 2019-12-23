@@ -5,8 +5,8 @@
       <image src='/images/nav/left.png' mode='aspectFill'></image>
     </navigator>
     <!-- 回到首页按钮 -->
-    <navigator open-type="switchTab" wx:if="{{show_home}}" url="{{'/pages/index/index'}}">
-      <image src='/images/nav/home.png' mode='aspectFill'></image>
+    <navigator open-type="switchTab" wx:if="{{show_home||nav_global.share}}" url="{{'/pages/index/index'}}">
+      <image style="width:50rpx;height:50rpx" src='/images/nav/home.png' mode='aspectFill'></image>
     </navigator>
     <!-- 首页记账按钮 -->
     <navigator wx:if="{{show_addnote}}" url="{{'/pages/note_add/note_add'}}">
@@ -19,8 +19,8 @@
     <view wx:if="{{show_avatar}}" class="avatar">
       <image src='{{show_avatar}}' mode='aspectFill'></image>
     </view>
-    <view wx:if="{{show_name}}" class="name">
-      <p>{{show_name}}</p>
+    <view wx:if="{{show_title}}" class="title">
+      <p>{{show_title}}</p>
     </view>
   </view>
 </view>

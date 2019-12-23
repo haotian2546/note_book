@@ -1,5 +1,5 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<nav-bar></nav-bar>
+<nav-bar show_title="{{note.type==='expend'?'一条支出记录':'一条收入记录'}}"></nav-bar>
 <view class="box">
   <view class="item">
     <view>金额</view>

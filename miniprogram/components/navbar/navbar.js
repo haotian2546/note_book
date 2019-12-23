@@ -25,7 +25,7 @@ Component({
       type: String,
       value: ''
     },
-    show_name: {
+    show_title: {
       type: String,
       value: ''
     }
@@ -39,12 +39,9 @@ Component({
   },
   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
   attached: function () {
-    console.log(1, App.globalData)
     this.setData({
       nav_global: App.globalData.nav_global
     });
-    console.log(2, this.data.nav_global)
-
   },
   /**
    * 组件的方法列表
