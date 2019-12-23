@@ -1,5 +1,8 @@
 {
   "enablePullDownRefresh": true,
   "navigationBarTitleText": "记账",
-  "backgroundColor":"#52495b"
+  "backgroundColor":"#52495b",
+  "usingComponents": {
+    "nav-bar": "../../components/navbar/navbar"
+  }
 }

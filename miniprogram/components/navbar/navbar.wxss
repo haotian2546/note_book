@@ -1,0 +1,27 @@
+.diy_nav {
+  width: 100vw;
+  background-color: #52495b;
+  position: sticky;
+  top: 0;
+}
+.diy_nav .nav {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.diy_nav .nav view,
+.diy_nav .nav navigator {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.diy_nav .nav view image,
+.diy_nav .nav navigator image {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}

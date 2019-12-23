@@ -1,4 +1,5 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
+<nav-bar show_add="true"></nav-bar>
 <view class="note_one iconfont  icon-jizhang" bindtap="nav_add_note"></view>
 <view wx:if="{{!list.length}}" class="logo_loading iconfont icon-hua"></view>
 <view style="margin-bottom:20rpx;">

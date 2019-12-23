@@ -1,0 +1,13 @@
+<view class="diy_nav">
+  <view class="nav" style="height:{{nav_global.navH}}px;padding-top:{{nav_global.statusBarH}}px">
+    <view bindtap='_nav_back' wx:if="{{show_back}}">
+      <image src='/images/nav/left.png' mode='aspectFill'></image>
+    </view>
+    <navigator open-type="switchTab" wx:if="{{show_home}}" url="{{'/pages/index/index'}}">
+      <image src='/images/nav/home.png' mode='aspectFill'></image>
+    </navigator>
+    <view bindtap='_nav_home' wx:if="{{show_add}}">
+      <image src='/images/nav/add.png' mode='aspectFill'></image>
+    </view>
+  </view>
+</view>

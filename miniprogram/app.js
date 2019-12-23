@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     let that = this;
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
@@ -11,8 +11,8 @@ App({
     } else {
       wx.cloud.init({
         // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        // env: 'dev-money',
-        env: 'pro-money',
+        env: 'dev-money',
+        // env: 'pro-money',
         traceUser: true,
       });
       wx.cloud.callFunction({
@@ -42,7 +42,7 @@ App({
                 if (res.confirm) {
                   // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
                   updateManager.applyUpdate()
-                }else{
+                } else {
                   updateManager.applyUpdate()
                 }
               }
@@ -58,11 +58,34 @@ App({
         }
       })
     }
+    if (options.scene == 1007 || options.scene == 1008) {
+      this.globalData.nav_global.share = true
+    } else {
+      this.globalData.nav_global.share = false
+    };
+    //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度）
+    
+    let menu = wx.getMenuButtonBoundingClientRect();
+    wx.getSystemInfo({
+      success: (res) => {
+        let statusBarHeight = res.statusBarHeight;
+        let navTop = menu.top;
+        let navHeight = menu.height + (navTop - statusBarHeight) * 2;
 
+        this.globalData.nav_global.navH = navHeight;
+        this.globalData.nav_global.statusBarH = statusBarHeight;
+
+      }
+    })
   },
   globalData: {
     userInfo: null,
     auth: false,
+    nav_global: {
+      share: false,
+      navH: '',
+      statusBarH: ''
+    }
   }
 })
 
