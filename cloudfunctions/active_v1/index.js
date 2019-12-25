@@ -13,6 +13,9 @@ exports.main = async (event, context) => {
     case 'active_luck2020': {
       return active_luck2020(event, context)
     }
+    case 'active_arrest_add_v1': {
+      return active_arrest_add_v1(event, context)
+    }
     default: {
       return
     }
@@ -88,4 +91,9 @@ async function active_luck2020(event, context) {
     }
   };
   return { user, text_list }
+}
+
+async function active_arrest_add_v1(event, context) {
+  console.log(event, context)
+  return event, context
 }

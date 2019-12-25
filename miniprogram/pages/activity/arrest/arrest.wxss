@@ -1,0 +1,30 @@
+.item {
+  background-color: #ffffff;
+  padding: 0 20rpx;
+  margin-bottom: 10rpx;
+}
+.item input {
+  height: 100rpx;
+}
+.item textarea {
+  padding: 20rpx 0;
+}
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.submit {
+  width: 710rpx;
+  background: #52495b;
+  color: #ffffff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.tips {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}

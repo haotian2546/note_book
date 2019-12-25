@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/activity/arrest/arrest",
     "pages/index/index",
     "pages/user/user",
     "pages/note_add/note_add",

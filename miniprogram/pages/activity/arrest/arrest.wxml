@@ -1,0 +1,22 @@
+<nav-bar show_back="{{true}}" show_title="抓阄"></nav-bar>
+<view class="item">
+  <input placeholder="抓阄标题(必填)" type="text" bindinput="handel_title" />
+</view>
+<view class="item">
+  <input placeholder="参与抓阄总人数(必填、正整数)" type="number" bindinput="handel_number" />
+</view>
+<view class="item">
+  <textarea placeholder="具体描述(奖品/规则)" type="text" bindinput="handel_description"></textarea>
+</view>
+<view class="item item-row">
+  <p>可重复抽取</p>
+  <switch checked="{{repeat}}" bindchange="handel_repeat" />
+</view>
+<view class="item item-row">
+  <p>仅可查看本人抓阄结果</p>
+  <switch checked="{{view_only_me}}" bindchange="handel_view" />
+</view>
+<button hover-class="hover-class" class="submit" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="author_userinfo">
+  完成
+</button>
+<view class="tips">* 根据抓阄总人数 随机分配 抓阄人数以内数字</view>

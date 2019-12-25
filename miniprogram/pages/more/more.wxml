@@ -1,5 +1,10 @@
 <nav-bar show_title="更多小工具"></nav-bar>
 <view class="list">
+  <navigator url="{{'/pages/activity/arrest/arrest'}}" class="list-item">
+    <i class="iconfont" style="color:#52495b;"></i>
+    <text>抓阄</text>
+    <i class="iconfont  icon-arr"></i>
+  </navigator>
   <navigator url="{{'/pages/activity/luck2020/luck2020'}}" class="list-item">
     <i class="iconfont" style="color:#52495b;"></i>
     <text>我的2020</text>
