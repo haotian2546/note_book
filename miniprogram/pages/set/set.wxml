@@ -1,11 +1,7 @@
 <!-- pages/set/set.wxml -->
-
-<nav-bar></nav-bar>
-
-
-
+<nav-bar show_title="设置"></nav-bar>
 <view class="list">
-  <button class="list-item"  open-type="getUserInfo" hover-class="hover-class"  lang="zh_CN" bindgetuserinfo="author_userinfo">
+  <button class="list-item" open-type="getUserInfo" hover-class="hover-class" lang="zh_CN" bindgetuserinfo="author_userinfo">
     <i class="iconfont  icon-weixin" style="color:#52495b;"></i>
     <text>同步微信头像&昵称</text>
     <i class="iconfont  icon-icon_next_arrow"></i>

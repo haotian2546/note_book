@@ -1,5 +1,5 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<nav-bar show_avatar="{{info.author.avatarUrl}}" show_title="{{info.author.nickName}}"></nav-bar>
+<nav-bar show_avatar="{{info.author.avatarUrl}}" show_title="{{info.author.nickName}}创建的清单"></nav-bar>
 
 
 

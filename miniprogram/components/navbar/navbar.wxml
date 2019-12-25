@@ -19,8 +19,18 @@
     <view wx:if="{{show_avatar}}" class="avatar">
       <image src='{{show_avatar}}' mode='aspectFill'></image>
     </view>
-    <view wx:if="{{show_title}}" class="title">
-      <p>{{show_title}}</p>
+    <!-- /
+    /
+    /
+    / -->
+    <view class="title">
+            {{show_title}}
     </view>
+    <!-- /
+    /
+    /
+    / -->
+    <view wx:if="{{show_back}}" style="width: 70rpx;height: 70rpx;"></view>
+    <view wx:if="{{show_home||nav_global.share||show_addnote||show_addlists||show_avatar}}" style="width: 70rpx;height: 70rpx;"></view>
   </view>
 </view>

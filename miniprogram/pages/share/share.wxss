@@ -1,8 +1,0 @@
-/* pages/share/share.wxss */
-.can{
-  width: 600rpx;
-  height:800rpx;
-  border-radius:10rpx;
-  overflow:hidden;
-  margin: 40rpx auto;
-}

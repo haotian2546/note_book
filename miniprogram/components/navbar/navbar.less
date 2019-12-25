@@ -24,6 +24,9 @@
     navigator:first-child{
       margin-left: 10rpx;
     }
+    view:last-child{
+      margin-left: 10rpx;
+    }
     .avatar{
       width: 45rpx;
       height: 45rpx;
@@ -37,9 +40,12 @@
       }
     }
     .title{
-      p{
-        color: #ffffff;
-      }
+      flex: 1;
+      color: #ffffff;
+      text-align: center;
+      max-width: calc(100vw - 300rpx);
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }

@@ -1,6 +1,6 @@
 <!-- pages/note_books/note_books.wxml -->
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<nav-bar show_addlists="true" show_back="{{false}}"></nav-bar>
+<nav-bar show_addlists="true" show_back="{{false}}"  show_title="清单列表"></nav-bar>
 <view class="header">如果你真的愿意去努力，那么你人生最坏的结果，也不过是大器晚成。</view>
 <view wx:if="{{!list.length}}" class="logo_loading iconfont  icon-hua"></view>
 <view>

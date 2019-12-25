@@ -1,5 +1,5 @@
 <wxs module="filter" src="../../utils/utils.wxs"></wxs>
-<nav-bar show_addnote="true" show_back="{{false}}"></nav-bar>
+<nav-bar show_addnote="true" show_back="{{false}}" show_title="首页"></nav-bar>
 <view wx:if="{{!list.length}}" class="logo_loading iconfont icon-hua"></view>
 <view style="margin-bottom:20rpx;">
   <view wx:for="{{list}}" wx:key="index" class="item" data-id="{{item._id}}" bindtap="nav_note_handel" bindlongtap="del_note_handel" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd">

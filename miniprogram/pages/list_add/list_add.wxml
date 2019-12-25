@@ -1,4 +1,4 @@
-<nav-bar></nav-bar>
+<nav-bar  show_title="记录清单明细"></nav-bar>
 <view class="item">
   <input focus="true" placeholder="金额" type="digit" bindinput="handel_num"></input>
 </view>

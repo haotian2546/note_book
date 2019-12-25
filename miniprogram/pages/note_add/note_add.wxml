@@ -1,4 +1,4 @@
-<nav-bar></nav-bar>
+<nav-bar  show_title="生成一条记录"></nav-bar>
 <view class="tab">
   <view hover-class="hover-class" bindtap="switch_type_handel" data-type="tag_out" class="{{type==='tag_out'?'activity_type':''}}">支出</view>
   <view hover-class="hover-class" bindtap="switch_type_handel" data-type="tag_in"  class="{{type==='tag_in'?'activity_type':''}}">收入</view>
