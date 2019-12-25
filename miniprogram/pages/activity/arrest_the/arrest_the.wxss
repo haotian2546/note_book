@@ -1,0 +1,29 @@
+.thearrest {
+  background-color: #ffffff;
+}
+.thearrest view {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20rpx;
+  margin-bottom: 3rpx;
+  color: rgba(0, 0, 0, 0.5);
+}
+.thearrest view image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+}
+.thearrest view span {
+  color: #000000;
+  text-decoration: underline;
+}
+.submit {
+  width: 710rpx;
+  background: #52495b;
+  color: #ffffff;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  text-align: center;
+}

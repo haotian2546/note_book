@@ -16,11 +16,72 @@ exports.main = async (event, context) => {
     case 'active_arrest_add_v1': {
       return active_arrest_add_v1(event, context)
     }
+    case 'active_get_the_arrest_v1': {
+      return active_get_the_arrest_v1(event, context)
+    }
+    case 'active_get_arrests_v1': {
+      return active_get_arrests_v1(event, context)
+    }
     default: {
       return
     }
   }
 }
+
+
+
+
+async function active_arrest_add_v1(event, context) {
+  const wxContext = cloud.getWXContext();
+  let arrest = event.arrest;
+  arrest._openid = wxContext.OPENID;
+  let res = await db.collection('arrest').add({ data: arrest });
+  return res;
+}
+
+
+
+
+async function active_get_the_arrest_v1(event, context) {
+  const wxContext = cloud.getWXContext();
+
+  let arrest = (await db.collection('arrest').doc(event.id).get()).data;
+  let owner = (await db.collection('user').where({ _openid: arrest._openid }).get()).data[0];
+  arrest.owner = owner;
+  return arrest;
+}
+
+
+async function active_get_arrests_v1(event, context) {
+  const wxContext = cloud.getWXContext();
+  let arrests = await db.collection('arrest').where({ _openid: wxContext.OPENID }).get();
+  return arrests;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -91,9 +152,4 @@ async function active_luck2020(event, context) {
     }
   };
   return { user, text_list }
-}
-
-async function active_arrest_add_v1(event, context) {
-  console.log(event, context)
-  return event, context
 }

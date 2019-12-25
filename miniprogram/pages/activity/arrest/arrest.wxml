@@ -1,4 +1,9 @@
 <nav-bar show_back="{{true}}" show_title="抓阄"></nav-bar>
+<navigator wx:for="{{arrest_list}}" wx:key="index" url="{{'/pages/activity/arrest_the/arrest_the?id='+item._id}}">
+  1
+  <text>{{item.title}}</text>
+</navigator>
+
 <view class="item">
   <input placeholder="抓阄标题(必填)" type="text" bindinput="handel_title" />
 </view>

@@ -13,7 +13,8 @@
     "pages/set/set",
     "pages/more/more",
     "pages/message/message",
-    "pages/activity/luck2020/luck2020"
+    "pages/activity/luck2020/luck2020",
+    "pages/activity/arrest_the/arrest_the"
   ],
   "window": {
     "navigationBarTitleText": "记账",

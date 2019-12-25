@@ -1,0 +1,15 @@
+<nav-bar show_back="{{true}}" show_home="{{true}}" show_title="{{arrest.title}}"></nav-bar>
+<view class="thearrest">
+  <view>
+    该活动由
+    <image src="{{arrest.owner.avatarUrl}}" mode='aspectFill'></image>
+    <span>{{arrest.owner.nickName}}</span>
+    创建，最多允许
+    <span>{{arrest.number}}</span>
+    人参加
+  </view>
+  <view wx:if="{{arrest.description}}">活动描述：{{arrest.description}}</view>
+</view>
+<button hover-class="hover-class" class="submit" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="author_userinfo">
+  开始抓阄
+</button>

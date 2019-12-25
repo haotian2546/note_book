@@ -12,42 +12,32 @@ Page({
     description: '',
     repeat: false,
     view_only_me: false,
+    // -------------------
+    arrest_list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.get_arrests()
+  },
+  get_arrests: function () {
+    let that = this;
+    wx.cloud.callFunction({
+      name: 'active_v1',
+      data: {
+        action: 'active_get_arrests_v1',
+      },
+      success: function (res) {
+        that.setData({
+          arrest_list: res.result.data
+        })
+      }
+    })
+  },
 
-  },
 
-
-
-  handel_title: function (e) {
-    this.setData({
-      title: e.detail.value
-    })
-  },
-  handel_number: function (e) {
-    this.setData({
-      number: e.detail.value
-    })
-  },
-  handel_description: function (e) {
-    this.setData({
-      description: e.detail.value
-    })
-  },
-  handel_repeat: function (e) {
-    this.setData({
-      repeat: e.detail.value
-    })
-  },
-  handel_view: function (e) {
-    this.setData({
-      view_only_me: e.detail.value
-    })
-  },
   handel_submit: function () {
     if (!this.data.title || !/^[1-9]\d*$/.test(this.data.number)) {
       wx.showToast({
@@ -68,6 +58,11 @@ Page({
         data: {
           action: 'active_arrest_add_v1',
           arrest: data,
+        },
+        success: function (res) {
+          wx.navigateTo({
+            url: '/pages/activity/arrest_the/arrest_the?id=' + res.result._id,
+          });
         }
       })
     }
@@ -106,6 +101,31 @@ Page({
 
 
 
+  handel_title: function (e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  handel_number: function (e) {
+    this.setData({
+      number: e.detail.value
+    })
+  },
+  handel_description: function (e) {
+    this.setData({
+      description: e.detail.value
+    })
+  },
+  handel_repeat: function (e) {
+    this.setData({
+      repeat: e.detail.value
+    })
+  },
+  handel_view: function (e) {
+    this.setData({
+      view_only_me: e.detail.value
+    })
+  },
 
 
 })
