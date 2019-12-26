@@ -51,7 +51,10 @@ Page({
         number: this.data.number,
         description: this.data.description,
         repeat: this.data.repeat,
+        array: [],
         view_only_me: this.data.view_only_me,
+        create_time: (new Date()).getTime(),
+        change_time: (new Date()).getTime(),
       };
       wx.cloud.callFunction({
         name: 'active_v1',
@@ -60,6 +63,7 @@ Page({
           arrest: data,
         },
         success: function (res) {
+          wx.hideLoading();
           wx.navigateTo({
             url: '/pages/activity/arrest_the/arrest_the?id=' + res.result._id,
           });

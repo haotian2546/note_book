@@ -22,6 +22,9 @@ exports.main = async (event, context) => {
     case 'active_get_arrests_v1': {
       return active_get_arrests_v1(event, context)
     }
+    case 'active_up_arrest': {
+      return active_up_arrest(event, context)
+    }
     default: {
       return
     }
@@ -30,7 +33,7 @@ exports.main = async (event, context) => {
 
 
 
-
+//创建一个arrest活动
 async function active_arrest_add_v1(event, context) {
   const wxContext = cloud.getWXContext();
   let arrest = event.arrest;
@@ -41,7 +44,7 @@ async function active_arrest_add_v1(event, context) {
 
 
 
-
+//获取一个arrest的数据
 async function active_get_the_arrest_v1(event, context) {
   const wxContext = cloud.getWXContext();
 
@@ -52,6 +55,45 @@ async function active_get_the_arrest_v1(event, context) {
 }
 
 
+//更新一个arrest||开始
+
+async function active_up_arrest(event, context) {
+  const wxContext = cloud.getWXContext();
+  let arrest = (await db.collection('arrest').doc(event.id).get()).data;
+  let index;
+  let index_array;
+  if (arrest.number * 1 <= arrest.array.length) {
+    return { msg: '以达到限定人数' }
+  } else {
+    for (let i = 0; i < arrest.array.length; i++) {
+      // if (arrest.array[i].user._openid === wxContext.OPENID) {
+      //   return { msg: '不能重复抓阄' }
+      // }
+      index_array.push(arrest.array[i].num)
+
+      // index = Math.round(Math.random() * (arrest.number - 1) + 1);
+      // if (arrest.array[i].num * 1 === index * 1) {
+      //   index = Math.round(Math.random() * (arrest.number - 1) + 1);
+      // }
+    };
+    if (index_array.indexOf(index) === 0) {
+      index = Math.round(Math.random() * (arrest.number - 1) + 1);
+    }
+
+    let user = (await db.collection('user').where({ _openid: wxContext.OPENID }).get()).data[0];
+    let up = await db.collection('arrest').doc(event.id).update({
+      data: {
+        array: _.push({ num: index, user })
+      },
+    })
+    return { msg: index };
+  }
+
+}
+
+
+
+//获取我创建的arrests
 async function active_get_arrests_v1(event, context) {
   const wxContext = cloud.getWXContext();
   let arrests = await db.collection('arrest').where({ _openid: wxContext.OPENID }).get();

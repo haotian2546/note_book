@@ -1,9 +1,5 @@
+<wxs module="filter" src="../../../utils/utils.wxs"></wxs>
 <nav-bar show_back="{{true}}" show_title="抓阄"></nav-bar>
-<navigator wx:for="{{arrest_list}}" wx:key="index" url="{{'/pages/activity/arrest_the/arrest_the?id='+item._id}}">
-  1
-  <text>{{item.title}}</text>
-</navigator>
-
 <view class="item">
   <input placeholder="抓阄标题(必填)" type="text" bindinput="handel_title" />
 </view>
@@ -25,3 +21,13 @@
   完成
 </button>
 <view class="tips">* 根据抓阄总人数 随机分配 抓阄人数以内数字</view>
+<view class="arrests">
+  <navigator wx:for="{{arrest_list}}" wx:key="index" url="{{'/pages/activity/arrest_the/arrest_the?id='+item._id}}">
+    <view>{{item.title}}</view>
+    <view wx:if="{{item.description}}">{{item.description}}</view>
+    <view>
+      <text>限定{{item.number}}人参加</text>
+      <text>{{filter.allTime(item.create_time)}}</text>
+    </view>
+  </navigator>
+</view>

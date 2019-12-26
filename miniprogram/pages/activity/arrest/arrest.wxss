@@ -28,3 +28,23 @@
   line-height: 100rpx;
   font-size: 28rpx;
 }
+.arrests {
+  margin-top: 100rpx;
+}
+.arrests navigator {
+  padding: 20rpx;
+  background: #ffffff;
+  margin-bottom: 10rpx;
+}
+.arrests navigator view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999999;
+}
+.arrests navigator view text {
+  color: #999999;
+}
+.arrests navigator view:nth-child(1) {
+  color: #000000;
+}

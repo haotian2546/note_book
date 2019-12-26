@@ -17,6 +17,10 @@ Page({
     this.getArrest(options.id)
   },
   getArrest: function (id) {
+    wx.showLoading({
+      title: 'loading',
+      mask: true,
+    });
     let that = this;
     wx.cloud.callFunction({
       name: 'active_v1',
@@ -28,7 +32,8 @@ Page({
         console.log(res.result)
         that.setData({
           arrest: res.result
-        })
+        });
+        wx.hideLoading();
       }
     })
   },
@@ -51,7 +56,10 @@ Page({
           }
         },
         success: function () {
-          
+          that.upArrest()
+        },
+        fail: function () {
+
         }
       })
     } else {
@@ -62,4 +70,18 @@ Page({
     }
 
   },
+  upArrest: function () {
+    let that = this;
+    wx.cloud.callFunction({
+      name: 'active_v1',
+      data: {
+        action: 'active_up_arrest',
+        id: that.data.arrest._id
+      },
+      success: function (res) {
+        wx.hideLoading();
+        console.log(res.result.msg);
+      }
+    })
+  }
 })
